@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251497892111",
+    "project_id": "carracing-5a798",
+    "storage_bucket": "carracing-5a798.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251497892111:android:1952f4618edd334aa2d67a",
+        "android_client_info": {
+          "package_name": "com.hongik.carRacing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFs8wsyUJjSrBj7cKdLpi9Q6aj6cQ-D04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
