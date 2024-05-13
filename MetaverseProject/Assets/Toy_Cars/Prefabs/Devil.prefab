@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2836508812663599523}
   - component: {fileID: 1221203555350429190}
   - component: {fileID: 3969467187475499724}
-  - component: {fileID: -8220979726482509601}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Untagged
@@ -26,6 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176899279463934745}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,7 +34,6 @@ Transform:
   - {fileID: 1669910050223736992}
   - {fileID: 4043995108511719004}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1221203555350429190
 MeshFilter:
@@ -86,27 +85,12 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-8220979726482509601
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176899279463934745}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1199663026635910987
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2836508812663599523}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 205c55e69066d3d4aa7a2f85d836e53b, type: 3}
@@ -162,6 +146,12 @@ PrefabInstance:
       value: devil_collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 205c55e69066d3d4aa7a2f85d836e53b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7577151151269919961}
   m_SourcePrefab: {fileID: 100100000, guid: 205c55e69066d3d4aa7a2f85d836e53b, type: 3}
 --- !u!4 &1669910050223736992 stripped
 Transform:
@@ -181,9 +171,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046717785173692954}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6108949265020339912, guid: 205c55e69066d3d4aa7a2f85d836e53b, type: 3}
@@ -192,6 +190,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2836508812663599523}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0a311d3b1c7e2ba418c24a8e1733ed13, type: 3}
@@ -243,6 +242,9 @@ PrefabInstance:
       value: Wheels
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a311d3b1c7e2ba418c24a8e1733ed13, type: 3}
 --- !u!4 &4043995108511719004 stripped
 Transform:

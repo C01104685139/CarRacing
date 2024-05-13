@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 594412085401540658}
   - component: {fileID: 4580192918240876439}
   - component: {fileID: 1762291159026180957}
-  - component: {fileID: 2957047681480211145}
   m_Layer: 0
   m_Name: Armor
   m_TagString: Untagged
@@ -26,6 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248848106957734536}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,7 +34,6 @@ Transform:
   - {fileID: 8330346719842607065}
   - {fileID: 5671050363252949679}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4580192918240876439
 MeshFilter:
@@ -86,27 +85,12 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2957047681480211145
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248848106957734536}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &5276291590979560772
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 594412085401540658}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0a311d3b1c7e2ba418c24a8e1733ed13, type: 3}
@@ -158,6 +142,9 @@ PrefabInstance:
       value: Wheels
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a311d3b1c7e2ba418c24a8e1733ed13, type: 3}
 --- !u!4 &5671050363252949679 stripped
 Transform:
@@ -169,6 +156,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 594412085401540658}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cafabbab1da8acf4391b160cc40814ca, type: 3}
@@ -224,6 +212,12 @@ PrefabInstance:
       value: armor_collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cafabbab1da8acf4391b160cc40814ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3331823678269202780}
   m_SourcePrefab: {fileID: 100100000, guid: cafabbab1da8acf4391b160cc40814ca, type: 3}
 --- !u!4 &8330346719842607065 stripped
 Transform:
@@ -243,9 +237,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8705606068153042275}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7110397683513454119, guid: cafabbab1da8acf4391b160cc40814ca, type: 3}
