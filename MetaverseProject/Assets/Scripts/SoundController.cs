@@ -6,22 +6,52 @@ using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
-    public AudioMixer masterMixer;
-    public Slider audioSlider;
+    AudioSource bgm_player;
+    AudioSource efs_player;
 
-    public void BGMControl()
+    public AudioMixer mixer;
+    public Slider BS_Slider;
+    public Slider ES_Slider;
+
+    public static SoundController instance; // SoundController.instance.PlaySound("");물리구현에 추가해서 효과음 설정
+
+    void Start()
     {
-        float sound = audioSlider.value;
-
-        if(sound == -40f) masterMixer.SetFloat("BGM", -80);
-        else masterMixer.SetFloat("BGM", sound);
+        BS_Slider.value = PlayerPrefs.GetFloat("BGM", 0.75f);
     }
 
-    public void EffectSoundControl()
+    void Awake()
     {
-        float sound = audioSlider.value;
+        instance = this;
+       // bgm_player = GameObject.Find("BGM").GetComponent<AudioSource>();
+       // efs_player = GameObject.Find("EffectSound").GetComponent<AudioSource>();
 
-        if(sound == -40f) masterMixer.SetFloat("EffectSound", -80);
-        else masterMixer.SetFloat("EffectSound", sound);
+        BS_Slider.onValueChanged.AddListener(ChangeBgmSound); //슬라이더로 BGM조절
+        ES_Slider.onValueChanged.AddListener(ChangeEfsSound); //슬라이더로 효과음조절
+    }
+
+    public AudioClip[] audio_clips;
+
+    public void PlaySound(string type) //효과음 clip index와 매치시켜서 연결하기
+    {
+        int index = 0;
+
+        switch (type) {
+            case "Boost" : index = 0; break;
+            case "Crash" : index = 1; break;
+            case "Drift" : index = 2; break;
+        }
+
+        efs_player.clip = audio_clips[index];
+        efs_player.Play();
+    }
+
+    public void ChangeBgmSound(float volume) //슬라이더 BGM 볼륨설정
+    {
+        mixer.SetFloat("BGM", Mathf.Log10(volume)* 20);
+    }
+    public void ChangeEfsSound(float volume) //슬라이더 효과음 볼륨설정
+    {
+        mixer.SetFloat("EffectSound", Mathf.Log10(volume)* 20);
     }
 }

@@ -11,17 +11,7 @@ public class SelectManager : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void YesLogout() //로그아웃 Yes버튼 클릭 시 로그아웃
     {
