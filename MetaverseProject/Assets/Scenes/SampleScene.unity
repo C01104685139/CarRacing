@@ -895,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33354856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824911, w: 0.7865883}
+  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824914, w: 0.7865883}
   m_LocalPosition: {x: -270.88385, y: -23.662014, z: -0.4383545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4610,7 +4610,7 @@ GameObject:
   - component: {fileID: 235488051}
   m_Layer: 5
   m_Name: ArmorButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4624,7 +4624,7 @@ RectTransform:
   m_GameObject: {fileID: 235488049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -4632,7 +4632,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -350, y: 150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 390, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235488051
 MonoBehaviour:
@@ -6022,7 +6022,7 @@ GameObject:
   - component: {fileID: 274377816}
   m_Layer: 5
   m_Name: RoadeterButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6036,7 +6036,7 @@ RectTransform:
   m_GameObject: {fileID: 274377814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -6044,7 +6044,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: -150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274377816
 MonoBehaviour:
@@ -6249,7 +6249,7 @@ GameObject:
   - component: {fileID: 279249312}
   m_Layer: 5
   m_Name: BackButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17472,7 +17472,7 @@ GameObject:
   - component: {fileID: 796931011}
   m_Layer: 5
   m_Name: GTButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17486,7 +17486,7 @@ RectTransform:
   m_GameObject: {fileID: 796931009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -17494,7 +17494,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -350, y: -150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796931011
 MonoBehaviour:
@@ -18893,7 +18893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862305079}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824911, w: 0.7865883}
+  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824914, w: 0.7865883}
   m_LocalPosition: {x: 129.14647, y: -1.3999996, z: 182.75066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21705,7 +21705,7 @@ GameObject:
   - component: {fileID: 925280001}
   m_Layer: 5
   m_Name: FormulaButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21719,7 +21719,7 @@ RectTransform:
   m_GameObject: {fileID: 925279999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -21727,7 +21727,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: 150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &925280001
 MonoBehaviour:
@@ -45447,7 +45447,7 @@ GameObject:
   - component: {fileID: 1926988883}
   m_Layer: 5
   m_Name: DevilButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45461,7 +45461,7 @@ RectTransform:
   m_GameObject: {fileID: 1926988881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -45469,7 +45469,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1926988883
 MonoBehaviour:
@@ -47620,7 +47620,7 @@ GameObject:
   - component: {fileID: 2022741966}
   m_Layer: 5
   m_Name: PunkButton
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47634,7 +47634,7 @@ RectTransform:
   m_GameObject: {fileID: 2022741964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 231588780}
@@ -47642,7 +47642,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 195, y: 130}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022741966
 MonoBehaviour:
