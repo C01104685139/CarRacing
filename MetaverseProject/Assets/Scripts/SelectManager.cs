@@ -18,6 +18,12 @@ public class SelectManager : MonoBehaviour
         auth.SignOut();
     }
 
+    public void selectCar(string carTag) // 해당 차의 태그 저장
+    {
+        PlayerPrefs.SetString("selectedCarTag", carTag);
+        Debug.Log("선택된 차 : " + carTag);
+    }
+
     public void race1SceneChange() //race1으로 씬 변경
     {
         SceneManager.LoadScene("RaceScene01");

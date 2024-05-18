@@ -5,11 +5,13 @@ using UnityEngine;
 public class CarManagement : MonoBehaviour
 {
     public string selectedCarTag; //대기실에서 선택된 자동차의 태그
+
     // Start is called before the first frame update
     void Start()
     {
+        selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+        
         GameObject[] cars = GameObject.FindGameObjectsWithTag("Car");
-
         //모든 자동차 GameObject 배열 반복
         foreach (GameObject car in cars)
         {
@@ -25,6 +27,7 @@ public class CarManagement : MonoBehaviour
                 car.SetActive(false);
             }
         }
+        
     }
 
     // Update is called once per frame
