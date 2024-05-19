@@ -29,11 +29,13 @@ public class Countdown : MonoBehaviour
         while (countdowntime > 0)
         {
             countdown.text = countdowntime.ToString();
+            SoundController.instance.PlaySound("CountBeep");//스타트 효과음
             yield return new WaitForSeconds(1f);
 
             countdowntime--;
         }
         countdown.text = "Go!";
+        SoundController.instance.PlaySound("StartBeep");//스타트 효과음
         RectTransform rectTransform = countdown.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(150, 0);
         yield return new WaitForSeconds(1f);

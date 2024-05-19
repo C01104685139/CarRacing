@@ -42,7 +42,8 @@ public class SoundController : MonoBehaviour
             case "Crash" : index = 1; break;
             case "Drift" : index = 2; break;
             case "Engine" : index = 3; break;
-            case "RaceStart" : index = 4; break;
+            case "CountBeep" : index = 4; break;
+            case "StartBeep" : index = 5; break;
         }
 
         efs_player.clip = audio_clips[index];
