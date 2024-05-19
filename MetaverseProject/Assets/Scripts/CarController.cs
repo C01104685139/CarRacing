@@ -10,10 +10,26 @@ public class CarController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public WheelCollider frontLeftWheel;
+    public WheelCollider frontRightWheel;
+    public WheelCollider rearLeftWheel;
+    public WheelCollider rearRightWheel;
+
+    public float suspensionHeight = 0.8f; //원하는 서스펜션 높이
+
     void Start()
     {
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
         rb = GetComponent<Rigidbody>();
+        rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
+        rb.mass = 1500f; //자동차의 질량 조정
+        rb.drag = 0.5f; //공기 저항 설정
+        rb.angularDrag = 0.5f; //각속도에 대한 공기 저항 설정
+
+        frontLeftWheel.suspensionDistance = suspensionHeight;
+        frontRightWheel.suspensionDistance = suspensionHeight;
+        rearLeftWheel.suspensionDistance = suspensionHeight;
+        rearRightWheel.suspensionDistance = suspensionHeight; //서스펜션 높이 설정
 
         //자동차에 대한 선택 여부 확인
         if (!gameObject.CompareTag(selectedCarTag))
