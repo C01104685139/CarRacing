@@ -4611,7 +4611,7 @@ GameObject:
   - component: {fileID: 235488054}
   m_Layer: 5
   m_Name: ArmorButton
-  m_TagString: Car05
+  m_TagString: Armor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6047,8 +6047,8 @@ GameObject:
   - component: {fileID: 274377816}
   - component: {fileID: 274377819}
   m_Layer: 5
-  m_Name: RoadeterButton
-  m_TagString: Car04
+  m_Name: RoadsterButton
+  m_TagString: Roadster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17545,7 +17545,7 @@ GameObject:
   - component: {fileID: 796931014}
   m_Layer: 5
   m_Name: GTButton
-  m_TagString: Car02
+  m_TagString: GT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21803,7 +21803,7 @@ GameObject:
   - component: {fileID: 925280004}
   m_Layer: 5
   m_Name: FormulaButton
-  m_TagString: Car06
+  m_TagString: Formula
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45570,7 +45570,7 @@ GameObject:
   - component: {fileID: 1926988886}
   m_Layer: 5
   m_Name: DevilButton
-  m_TagString: Car01
+  m_TagString: Devil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47768,7 +47768,7 @@ GameObject:
   - component: {fileID: 2022741969}
   m_Layer: 5
   m_Name: PunkButton
-  m_TagString: Car03
+  m_TagString: Punk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

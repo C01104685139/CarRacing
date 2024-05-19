@@ -1609,7 +1609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
       propertyPath: m_TagString
-      value: Car01
+      value: Devil
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1618,9 +1618,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 157952282}
-    - targetCorrespondingSourceObject: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 157952283}
     - targetCorrespondingSourceObject: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 157952284}
@@ -1657,19 +1654,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &157952283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157952281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!114 &157952284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,7 +2666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
       propertyPath: m_TagString
-      value: Car04
+      value: Roadster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2691,9 +2675,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 280918097}
-    - targetCorrespondingSourceObject: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 280918098}
     - targetCorrespondingSourceObject: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 280918099}
@@ -2730,19 +2711,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &280918098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280918096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!114 &280918099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5723,7 +5691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677342151307450362, guid: e3901609142097842ae91e4fb5732661, type: 3}
       propertyPath: m_TagString
-      value: Car06
+      value: Formula
       objectReference: {fileID: 0}
     - target: {fileID: 5450078251304357184, guid: e3901609142097842ae91e4fb5732661, type: 3}
       propertyPath: m_RootOrder
@@ -9542,7 +9510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
       propertyPath: m_TagString
-      value: Car03
+      value: Punk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9551,9 +9519,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1195458963}
-    - targetCorrespondingSourceObject: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1195458964}
     - targetCorrespondingSourceObject: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1195458965}
@@ -9590,19 +9555,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1195458964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195458962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!114 &1195458965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15603,7 +15555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
       propertyPath: m_TagString
-      value: Car02
+      value: GT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15612,9 +15564,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1992926878}
-    - targetCorrespondingSourceObject: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1992926879}
     - targetCorrespondingSourceObject: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1992926880}
@@ -15651,19 +15600,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1992926879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992926877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!114 &1992926880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15945,7 +15881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 248848106957734536, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
       propertyPath: m_TagString
-      value: Car05
+      value: Armor
       objectReference: {fileID: 0}
     - target: {fileID: 594412085401540658, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
       propertyPath: m_RootOrder
@@ -16012,9 +15948,6 @@ PrefabInstance:
       addedObject: {fileID: 2042306459}
     - targetCorrespondingSourceObject: {fileID: 248848106957734536, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2042306460}
-    - targetCorrespondingSourceObject: {fileID: 248848106957734536, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2042306461}
   m_SourcePrefab: {fileID: 100100000, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
 --- !u!1 &2042306458 stripped
@@ -16049,19 +15982,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2042306460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042306458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!114 &2042306461
 MonoBehaviour:
   m_ObjectHideFlags: 0

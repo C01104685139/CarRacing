@@ -5,6 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - Car06
+  - Car03
+  - Car05
+  - Car02
+  - Car04
+  - Car01
+  - Devil
+  - GT
+  - Punk
+  - Armor
+  - Formula
+  - Roadster
   layers:
   - Default
   - TransparentFX

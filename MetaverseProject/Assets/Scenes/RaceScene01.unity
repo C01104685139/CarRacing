@@ -45076,9 +45076,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devil
       objectReference: {fileID: 0}
-    - target: {fileID: 2686219561176182250, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
-      propertyPath: m_Mass
-      value: 1000
+    - target: {fileID: 2512669279713735120, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
