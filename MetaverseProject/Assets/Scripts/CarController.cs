@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float moveSpeed = 5f; //자동차의 이동 속도
+    public float moveSpeed = 8f; //자동차의 이동 속도
     public float rotationSpeed = 100f; //자동차의 회전 속도
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
 
@@ -17,9 +17,11 @@ public class CarController : MonoBehaviour
 
     public float suspensionHeight = 0.8f; //원하는 서스펜션 높이
 
+
     void Start()
     {
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
         rb.mass = 1500f; //자동차의 질량 조정
@@ -40,21 +42,41 @@ public class CarController : MonoBehaviour
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
+
         //선택된 자동차에 대해서만 입력 처리
         if (gameObject.activeSelf)
         {
             //이동 입력 처리
-            float moveInput = Input.GetAxis("Vertical");
-            Vector3 moveDirection = transform.forward * moveInput * moveSpeed;
-            rb.velocity = moveDirection;
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Vector3 moveDirection = transform.forward * moveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                Vector3 moveDirection = -transform.forward * moveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+            }
 
             //회전 입력 처리
-            float rotationInput = Input.GetAxis("Horizontal");
-            float rotation = rotationInput * rotationSpeed * Time.fixedDeltaTime;
-            Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
-            rb.MoveRotation(rb.rotation * deltaRotation);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                float rotation = -rotationSpeed * Time.fixedDeltaTime;
+                Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                rb.MoveRotation(rb.rotation * deltaRotation);
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                float rotation = rotationSpeed * Time.fixedDeltaTime;
+                Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                rb.MoveRotation(rb.rotation * deltaRotation);
+            }
+
         }
     }
 }
