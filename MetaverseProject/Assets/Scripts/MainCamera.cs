@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCamera : MonoBehaviour
 {
@@ -23,9 +24,7 @@ public class MainCamera : MonoBehaviour
         targetCar = GameObject.FindWithTag(selectedCarTag);
 
         mainCameraPosition = GameObject.FindWithTag("MainCamera").transform.position;
-        offsetX = targetCar.transform.position.x - mainCameraPosition.x;
-        offsetY = - targetCar.transform.position.y + mainCameraPosition.y;
-        offsetZ = - targetCar.transform.position.z + mainCameraPosition.z;
+        MapSelection();
     }
 
     // Update is called once per frame
@@ -39,5 +38,22 @@ public class MainCamera : MonoBehaviour
 
         // 카메라의 움직임을 부드럽게 하는 함수(Lerp)
         transform.position = Vector3.Lerp(transform.position, targetCarPosition, Time.deltaTime * speed);
+    }
+
+    private void MapSelection()
+    {
+        string scene = SceneManager.GetActiveScene().name;
+
+        if (scene == "RaceScene01" || scene == "RaceScene02")
+        {
+            offsetX = targetCar.transform.position.x - mainCameraPosition.x;
+            offsetY = -targetCar.transform.position.y + mainCameraPosition.y;
+            offsetZ = -targetCar.transform.position.z + mainCameraPosition.z;
+        } else
+        {
+            offsetX = -targetCar.transform.position.x + mainCameraPosition.x;
+            offsetY = -targetCar.transform.position.y + mainCameraPosition.y;
+            offsetZ = -targetCar.transform.position.z + mainCameraPosition.z;
+        }
     }
 }
