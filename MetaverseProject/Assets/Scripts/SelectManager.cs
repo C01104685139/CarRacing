@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using TMPro;
 
 
@@ -18,8 +19,11 @@ public class SelectManager : MonoBehaviour
         auth.SignOut();
     }
 
-    public void selectCar(string carTag) // 해당 차의 태그 저장
+    public void selectCar() // 해당 차의 태그 저장
     {
+        GameObject carButton = EventSystem.current.currentSelectedGameObject;
+        string carTag = carButton.tag;
+        
         PlayerPrefs.SetString("selectedCarTag", carTag);
         Debug.Log("선택된 차 : " + carTag);
     }

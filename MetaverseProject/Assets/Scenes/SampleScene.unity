@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.622985, g: 0.7167068, b: 0.8717912, a: 1}
+  m_IndirectSpecularColor: {r: 0.6229919, g: 0.71671546, b: 0.87179804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -895,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33354856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824914, w: 0.7865883}
+  m_LocalRotation: {x: -0.17444946, y: 0.578272, z: 0.12824912, w: 0.78658825}
   m_LocalPosition: {x: -270.88385, y: -23.662014, z: -0.4383545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4608,6 +4608,7 @@ GameObject:
   - component: {fileID: 235488053}
   - component: {fileID: 235488052}
   - component: {fileID: 235488051}
+  - component: {fileID: 235488054}
   m_Layer: 5
   m_Name: ArmorButton
   m_TagString: Car05
@@ -4702,6 +4703,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 235488054}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Car05
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &235488052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4740,6 +4753,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235488049}
   m_CullTransparentMesh: 1
+--- !u!114 &235488054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235488049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &239403104
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,6 +6045,7 @@ GameObject:
   - component: {fileID: 274377818}
   - component: {fileID: 274377817}
   - component: {fileID: 274377816}
+  - component: {fileID: 274377819}
   m_Layer: 5
   m_Name: RoadeterButton
   m_TagString: Car04
@@ -6114,6 +6140,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 274377819}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Car04
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &274377817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6152,6 +6190,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274377814}
   m_CullTransparentMesh: 1
+--- !u!114 &274377819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274377814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277502572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17492,6 +17542,7 @@ GameObject:
   - component: {fileID: 796931013}
   - component: {fileID: 796931012}
   - component: {fileID: 796931011}
+  - component: {fileID: 796931014}
   m_Layer: 5
   m_Name: GTButton
   m_TagString: Car02
@@ -17586,8 +17637,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 796931009}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+      - m_Target: {fileID: 796931014}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
         m_MethodName: set_tag
         m_Mode: 5
         m_Arguments:
@@ -17636,6 +17687,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796931009}
   m_CullTransparentMesh: 1
+--- !u!114 &796931014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796931009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811936805
 GameObject:
   m_ObjectHideFlags: 0
@@ -18927,7 +18990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862305079}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824914, w: 0.7865883}
+  m_LocalRotation: {x: -0.17444946, y: 0.578272, z: 0.12824912, w: 0.78658825}
   m_LocalPosition: {x: 129.14647, y: -1.3999996, z: 182.75066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21737,6 +21800,7 @@ GameObject:
   - component: {fileID: 925280003}
   - component: {fileID: 925280002}
   - component: {fileID: 925280001}
+  - component: {fileID: 925280004}
   m_Layer: 5
   m_Name: FormulaButton
   m_TagString: Car06
@@ -21831,6 +21895,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 925280004}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Car06
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &925280002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21869,6 +21945,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925279999}
   m_CullTransparentMesh: 1
+--- !u!114 &925280004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925279999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927584732
 GameObject:
   m_ObjectHideFlags: 0
@@ -45575,9 +45663,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1926988886}
-        m_TargetAssemblyTypeName: CarManagement, Assembly-CSharp
-        m_MethodName: C1
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45633,10 +45721,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926988881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd84bda51a8c2ee458848518243fcfc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedCarTag: 
 --- !u!1 &1927758931
 GameObject:
   m_ObjectHideFlags: 0
@@ -47678,6 +47765,7 @@ GameObject:
   - component: {fileID: 2022741968}
   - component: {fileID: 2022741967}
   - component: {fileID: 2022741966}
+  - component: {fileID: 2022741969}
   m_Layer: 5
   m_Name: PunkButton
   m_TagString: Car03
@@ -47772,6 +47860,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2022741969}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Car03
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2022741967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47810,6 +47910,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022741964}
   m_CullTransparentMesh: 1
+--- !u!114 &2022741969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022741964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027799861
 GameObject:
   m_ObjectHideFlags: 0
