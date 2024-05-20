@@ -15,7 +15,7 @@ public class CarController : MonoBehaviour
     public WheelCollider rearLeftWheel;
     public WheelCollider rearRightWheel;
 
-    public float suspensionHeight = 0.8f; //원하는 서스펜션 높이
+    public float suspensionHeight = 0f; //원하는 서스펜션 높이
 
 
     void Start()
