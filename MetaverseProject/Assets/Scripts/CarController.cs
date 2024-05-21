@@ -15,12 +15,13 @@ public class CarController : MonoBehaviour
     public WheelCollider rearLeftWheel;
     public WheelCollider rearRightWheel;
 
-    public float suspensionHeight = 0f; //원하는 서스펜션 높이
+    public float suspensionHeight; //원하는 서스펜션 높이
 
 
     void Start()
     {
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+        suspensionHeight = 0.1f;
 
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
