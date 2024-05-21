@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float moveSpeed = 8f; //자동차의 이동 속도
-    public float rotationSpeed = 100f; //자동차의 회전 속도
+    public float moveSpeed = 10f; //자동차의 이동 속도
+    public float rotationSpeed = 50f; //자동차의 회전 속도
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
 
     private Rigidbody rb;
@@ -17,6 +17,9 @@ public class CarController : MonoBehaviour
 
     public float suspensionHeight; //원하는 서스펜션 높이
 
+    private float currentYAngle;
+    private float yAngleVelocity;
+    private float rotationSmoothTime = 0.1f; // 회전 보간 시간
 
     void Start()
     {
@@ -53,31 +56,64 @@ public class CarController : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                Vector3 moveDirection = transform.forward * moveSpeed;
-                rb.AddForce(moveDirection, ForceMode.Acceleration);
+            //상 방향키
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                if (Input.GetKey(KeyCode.LeftArrow)) {
+                    //상좌 이동
+                    Vector3 moveDirection = (transform.forward + -transform.right).normalized * moveSpeed;
+                    float rotation = -rotationSpeed * Time.fixedDeltaTime;
+                    Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
+                else if (Input.GetKey(KeyCode.RightArrow)) {
+                    //상우 이동
+                    Vector3 moveDirection = (transform.forward + transform.right).normalized * moveSpeed;
+                    float rotation = rotationSpeed * Time.fixedDeltaTime;
+                    Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
+                else {
+                    Vector3 moveDirection = transform.forward * moveSpeed;
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                Vector3 moveDirection = -transform.forward * moveSpeed;
-                rb.AddForce(moveDirection, ForceMode.Acceleration);
+            //하 방향키
+            else if (Input.GetKey(KeyCode.DownArrow)) {
+                if (Input.GetKey(KeyCode.LeftArrow)) {
+                    //하좌 이동
+                    Vector3 moveDirection = (-transform.forward + -transform.right).normalized * moveSpeed;
+                    float rotation = -rotationSpeed * Time.fixedDeltaTime;
+                    Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
+                else if (Input.GetKey(KeyCode.RightArrow)) {
+                    //하우 이동
+                    Vector3 moveDirection = (-transform.forward + transform.right).normalized * moveSpeed;
+                    float rotation = rotationSpeed * Time.fixedDeltaTime;
+                    Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
+                    rb.MoveRotation(rb.rotation * deltaRotation);
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
+                else {
+                    Vector3 moveDirection = -transform.forward * moveSpeed;
+                    rb.AddForce(moveDirection, ForceMode.Acceleration);
+                }
             }
-
-            //회전 입력 처리
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
+            //좌 방향키
+            else if (Input.GetKey(KeyCode.LeftArrow)) {
                 float rotation = -rotationSpeed * Time.fixedDeltaTime;
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
+            //우 방향키
+            else if (Input.GetKey(KeyCode.RightArrow)) {
                 float rotation = rotationSpeed * Time.fixedDeltaTime;
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-
         }
     }
 }
