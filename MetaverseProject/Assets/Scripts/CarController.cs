@@ -21,8 +21,12 @@ public class CarController : MonoBehaviour
     private float yAngleVelocity;
     private float rotationSmoothTime = 0.1f; // 회전 보간 시간
 
+    private bool stopMovingAtStart; // 게임 맵 시작 시 자동차 움직임 제한
+
     void Start()
     {
+        stopMovingAtStart = false;
+
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
         suspensionHeight = 0.1f;
 
@@ -48,6 +52,11 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        // 게임 맵 처음 시작 시 자동차 움직임 제한
+        if (!stopMovingAtStart)
+        {
+            return;
+        }
 
         //선택된 자동차에 대해서만 입력 처리
         if (gameObject.activeSelf)
@@ -115,6 +124,12 @@ public class CarController : MonoBehaviour
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
         }
+    }
+
+    // 게임 맵 처음 시작 시 자동차 움직임 제한 (카운트다운 이후에 동작)
+    public void StartMoving(bool status)
+    {
+        stopMovingAtStart = status;
     }
 }
 
