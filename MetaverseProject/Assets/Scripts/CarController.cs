@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
-        rb.mass = 1500f; //자동차의 질량 조정
+        rb.mass = 2000f; //자동차의 질량 조정
         rb.drag = 0.5f; //공기 저항 설정
         rb.angularDrag = 0.5f; //각속도에 대한 공기 저항 설정
 
@@ -61,7 +61,7 @@ public class CarController : MonoBehaviour
         //선택된 자동차에 대해서만 입력 처리
         if (gameObject.activeSelf)
         {
-            rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
+            rb.velocity = transform.forward * moveSpeed * 5;
 
             //이동 입력 처리
             float horizontalInput = Input.GetAxis("Horizontal");
