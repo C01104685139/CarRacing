@@ -61,6 +61,8 @@ public class CarController : MonoBehaviour
         //선택된 자동차에 대해서만 입력 처리
         if (gameObject.activeSelf)
         {
+            rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
+
             //이동 입력 처리
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
