@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float moveSpeed = 10f; //자동차의 이동 속도
-    public float rotationSpeed = 50f; //자동차의 회전 속도
+    public float moveSpeed; //자동차의 이동 속도
+    public float rotationSpeed; //자동차의 회전 속도
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
 
     private Rigidbody rb;
@@ -26,6 +26,9 @@ public class CarController : MonoBehaviour
     void Start()
     {
         stopMovingAtStart = false;
+
+        moveSpeed = 15f;
+        rotationSpeed = 30f;
 
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
         suspensionHeight = 0.1f;
