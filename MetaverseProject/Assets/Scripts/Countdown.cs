@@ -26,6 +26,9 @@ public class Countdown : MonoBehaviour
 
     IEnumerator StartCountDown()
     {
+        CarController carController = GameObject.Find("Devil").GetComponent<CarController>();
+        carController.StartMoving(false);
+
         while (countdowntime > 0)
         {
             countdown.text = countdowntime.ToString();
@@ -40,5 +43,7 @@ public class Countdown : MonoBehaviour
         rectTransform.anchoredPosition = new Vector2(150, 0);
         yield return new WaitForSeconds(1f);
         countdown.gameObject.SetActive(false);
+
+        carController.StartMoving(true);
     }
 }
