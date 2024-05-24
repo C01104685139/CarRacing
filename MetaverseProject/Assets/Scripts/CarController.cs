@@ -6,9 +6,16 @@ public class CarController : MonoBehaviour
 {
     public float moveSpeed = 10f; //자동차의 이동 속도
     public float rotationSpeed = 50f; //자동차의 회전 속도
+    public float maxSpeed = 20f; //자동차의 최대 속도
+    public float accelerationFactor = 2f; //가속 계수
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
 
     private Rigidbody rb;
+
+    private float upKeyTime;
+    private float downKeyTime;
+    private float leftKeyTime;
+    private float rightKeyTime;
 
     public WheelCollider frontLeftWheel;
     public WheelCollider frontRightWheel;
@@ -61,6 +68,30 @@ public class CarController : MonoBehaviour
         //선택된 자동차에 대해서만 입력 처리
         if (gameObject.activeSelf)
         {
+            // 방향키가 눌린 시간 추적
+            if (Input.GetKey(KeyCode.UpArrow))
+                upKeyTime += Time.deltaTime;
+            else
+                upKeyTime = 0;
+
+            if (Input.GetKey(KeyCode.DownArrow))
+                downKeyTime += Time.deltaTime;
+            else
+            downKeyTime = 0;
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+                leftKeyTime += Time.deltaTime;
+            else
+                leftKeyTime = 0;
+
+            if (Input.GetKey(KeyCode.RightArrow))
+                rightKeyTime += Time.deltaTime;
+            else
+                rightKeyTime = 0;
+
+            float currentMoveSpeed = moveSpeed + Mathf.Min(upKeyTime, downKeyTime) * accelerationFactor;
+            currentMoveSpeed = Mathf.Clamp(currentMoveSpeed, moveSpeed, maxSpeed);
+
             rb.velocity = transform.forward * moveSpeed * 5;
 
             //이동 입력 처리
@@ -69,9 +100,14 @@ public class CarController : MonoBehaviour
 
             //상 방향키
             if (Input.GetKey(KeyCode.UpArrow)) {
+                
+                //상 방향키 누를 때 가속도 적용
+                Vector3 moveDirection = transform.forward * currentMoveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+
                 if (Input.GetKey(KeyCode.LeftArrow)) {
                     //상좌 이동
-                    Vector3 moveDirection = (transform.forward + -transform.right).normalized * moveSpeed;
+                    Vector3 upleft_moveDirection = (transform.forward + -transform.right).normalized * moveSpeed;
                     float rotation = -rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                     rb.MoveRotation(rb.rotation * deltaRotation);
@@ -79,22 +115,27 @@ public class CarController : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow)) {
                     //상우 이동
-                    Vector3 moveDirection = (transform.forward + transform.right).normalized * moveSpeed;
+                    Vector3 upright_moveDirection = (transform.forward + transform.right).normalized * moveSpeed;
                     float rotation = rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                     rb.MoveRotation(rb.rotation * deltaRotation);
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
                 else {
-                    Vector3 moveDirection = transform.forward * moveSpeed;
+                    Vector3 up_moveDirection = transform.forward * moveSpeed;
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
             }
             //하 방향키
             else if (Input.GetKey(KeyCode.DownArrow)) {
+
+                //하 방향키 누를 때 가속도 적용
+                Vector3 moveDirection = -transform.forward * currentMoveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+
                 if (Input.GetKey(KeyCode.LeftArrow)) {
                     //하좌 이동
-                    Vector3 moveDirection = (-transform.forward + -transform.right).normalized * moveSpeed;
+                    Vector3 downleft_moveDirection = (-transform.forward + -transform.right).normalized * moveSpeed;
                     float rotation = -rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                     rb.MoveRotation(rb.rotation * deltaRotation);
@@ -102,25 +143,33 @@ public class CarController : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow)) {
                     //하우 이동
-                    Vector3 moveDirection = (-transform.forward + transform.right).normalized * moveSpeed;
+                    Vector3 downright_moveDirection = (-transform.forward + transform.right).normalized * moveSpeed;
                     float rotation = rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                     rb.MoveRotation(rb.rotation * deltaRotation);
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
                 else {
-                    Vector3 moveDirection = -transform.forward * moveSpeed;
+                    Vector3 down_moveDirection = -transform.forward * moveSpeed;
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
             }
             //좌 방향키
             else if (Input.GetKey(KeyCode.LeftArrow)) {
+                //좌 방향키를 누르고 있으면 가속도 적용
+                Vector3 moveDirection = -transform.right * currentMoveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+
                 float rotation = -rotationSpeed * Time.fixedDeltaTime;
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
             //우 방향키
             else if (Input.GetKey(KeyCode.RightArrow)) {
+                //우 방향키를 누르고 있으면 가속도 적용
+                Vector3 moveDirection = -transform.forward * currentMoveSpeed;
+                rb.AddForce(moveDirection, ForceMode.Acceleration);
+
                 float rotation = rotationSpeed * Time.fixedDeltaTime;
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
