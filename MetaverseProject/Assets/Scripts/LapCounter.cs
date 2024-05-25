@@ -250,18 +250,15 @@ public class RaceManager : MonoBehaviour
                 }
 
                 // 5명 뽑기
-                var top5Users = recordList.GroupBy(r => r.userEmail)
-                              .Select(g => new { userEmail = g.Key, bestTime = g.Min(r => r.timeRecord) })
-                              .OrderBy(g => g.bestTime)
-                              .Take(5);
+                var top5 = recordList.OrderBy(r => r.timeRecord).Take(5);
 
                 string[] tmp = new string[] { "-", "-", "-", "-", "-", "-" };
                 int cnt = 1;
-                // 결과 출력
-                foreach (var user in top5Users)
+                // 순위 반영
+                foreach (var user in top5)
                 {
-                    tmp[cnt] = cnt++ + "등 : "+ user.userEmail +" → "+ user.bestTime +"초";
-                    Debug.Log("User: " + user.userEmail + ", Best Time: " + user.bestTime);
+                    tmp[cnt] = cnt++ + "등 : "+ user.userEmail +" → "+ user.timeRecord + "초";
+                    Debug.Log("User: " + user.userEmail + ", Time: " + user.timeRecord);
                 }
 
                 first.text = tmp[1];
