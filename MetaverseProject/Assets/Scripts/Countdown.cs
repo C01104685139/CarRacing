@@ -8,6 +8,7 @@ public class Countdown : MonoBehaviour
 {
     public int countdowntime = 3;
     public TMP_Text countdown;
+    private string selectedCarTag;
 
     void OnEnable() // 씬 처음 호출 시 로드
     {
@@ -26,7 +27,8 @@ public class Countdown : MonoBehaviour
 
     IEnumerator StartCountDown()
     {
-        CarController carController = GameObject.Find("Devil").GetComponent<CarController>();
+        selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+        CarController carController = GameObject.Find(selectedCarTag).GetComponent<CarController>();
         carController.StartMoving(false);
 
         while (countdowntime > 0)

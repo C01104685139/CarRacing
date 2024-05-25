@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float moveSpeed = 10f; //자동차의 이동 속도
-    public float rotationSpeed = 50f; //자동차의 회전 속도
-    public float maxSpeed = 20f; //자동차의 최대 속도
-    public float accelerationFactor = 2f; //가속 계수
+    public float moveSpeed; //자동차의 이동 속도
+    public float rotationSpeed; //자동차의 회전 속도
+    public float maxSpeed; //자동차의 최대 속도
+    public float accelerationFactor; //가속 계수
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
 
     private Rigidbody rb;
@@ -34,8 +34,10 @@ public class CarController : MonoBehaviour
     {
         stopMovingAtStart = false;
 
-        moveSpeed = 15f;
+        moveSpeed = 10f;
         rotationSpeed = 30f;
+        maxSpeed = 15f;
+        accelerationFactor = 2f;
 
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
         suspensionHeight = 0.1f;
@@ -95,7 +97,8 @@ public class CarController : MonoBehaviour
             float currentMoveSpeed = moveSpeed + Mathf.Min(upKeyTime, downKeyTime) * accelerationFactor;
             currentMoveSpeed = Mathf.Clamp(currentMoveSpeed, moveSpeed, maxSpeed);
 
-            rb.velocity = transform.forward * moveSpeed * 5;
+            //rb.velocity = transform.forward * moveSpeed * 5;
+            rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
 
             //이동 입력 처리
             float horizontalInput = Input.GetAxis("Horizontal");
