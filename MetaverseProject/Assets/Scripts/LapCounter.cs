@@ -3,6 +3,8 @@ using Firebase.Auth;
 using Firebase.Extensions;
 using Firebase;
 using TMPro;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
@@ -28,6 +30,12 @@ public class RaceManager : MonoBehaviour
     private DatabaseReference reference;
     private string userEmail;
 
+    public TMP_Text first;
+    public TMP_Text second;
+    public TMP_Text third;
+    public TMP_Text fourth;
+    public TMP_Text fifth;
+
     void Start()
     {
         isreplayed = false;
@@ -37,6 +45,8 @@ public class RaceManager : MonoBehaviour
         racingTime = 0;
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        UpdateRank();
     }
 
     void Update()
@@ -97,12 +107,16 @@ public class RaceManager : MonoBehaviour
         Debug.Log("Race finished!");
         //운전 못하게 하는 코드 추가
 
-        // 재시작 or 종료 선택
-        finishGamePanel.SetActive(true);
 
         // 레이스 결과 저장
         // 저장할 데이터 : 사용자 이메일, 레이싱 맵 번호, 시간 기록
         SaveData();
+
+        // 순위 텍스트 조정
+        UpdateRank();
+
+        // 재시작 or 종료 선택
+        finishGamePanel.SetActive(true);
     }
 
     public void ReplayButton()
@@ -181,7 +195,6 @@ public class RaceManager : MonoBehaviour
                                     { // 기록이 더 좋을 때 갱신
                                         reference.Child("Records").Child(userEmail).Child(mapName).Child(recordSnapshot.Key).SetValueAsync(currentTime);
                                     }
-                                    
                                 }
                             }
                             else
@@ -197,6 +210,73 @@ public class RaceManager : MonoBehaviour
                 }
             }
         });
-        
     }
+
+    private void UpdateRank()
+    {
+        FirebaseDatabase.DefaultInstance.GetReference("Records").GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Error : " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+
+                // 불러온 주행 기록 저장할 리스트
+                List<RaceRecords> recordList = new List<RaceRecords>();
+
+                // 데이터 기록 가져오기
+                foreach (DataSnapshot userSnapshot in snapshot.Children)
+                {
+                    string userEmail = userSnapshot.Key;
+
+                    foreach (DataSnapshot mapSnapshot in userSnapshot.Children)
+                    {
+                        string mapName = mapSnapshot.Key;
+
+                        if (mapName == SceneManager.GetActiveScene().name) // 현재 맵에 해당하는 맵의 기록만 가져옴
+                        {
+                            foreach (DataSnapshot recordSnapshot in mapSnapshot.Children)
+                            {
+                                float timeRecord = float.Parse(recordSnapshot.Value.ToString());
+
+                                // 리스트에 기록 추가
+                                recordList.Add(new RaceRecords { userEmail = userEmail, mapName = mapName, timeRecord = timeRecord });
+                            }
+                        }
+                    }
+                }
+
+                // 5명 뽑기
+                var top5Users = recordList.GroupBy(r => r.userEmail)
+                              .Select(g => new { userEmail = g.Key, bestTime = g.Min(r => r.timeRecord) })
+                              .OrderBy(g => g.bestTime)
+                              .Take(5);
+
+                string[] tmp = new string[] { "-", "-", "-", "-", "-", "-" };
+                int cnt = 1;
+                // 결과 출력
+                foreach (var user in top5Users)
+                {
+                    tmp[cnt] = cnt++ + "등 : "+ user.userEmail +" → "+ user.bestTime +"초";
+                    Debug.Log("User: " + user.userEmail + ", Best Time: " + user.bestTime);
+                }
+
+                first.text = tmp[1];
+                second.text = tmp[2];
+                third.text = tmp[3];
+                fourth.text = tmp[4];
+                fifth.text = tmp[5];
+            }
+        });
+     }
+}
+
+public class RaceRecords
+{
+    public string userEmail { get; set; }
+    public string mapName { get; set; }
+    public float timeRecord { get; set; }
 }
