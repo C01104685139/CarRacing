@@ -1017,7 +1017,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -1045,6 +1045,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &34735444 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5434627715599348898, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+  m_PrefabInstance: {fileID: 7736993813106378527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &47294790
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,7 +8407,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -8430,6 +8435,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &327669506 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8381820681034708287, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+  m_PrefabInstance: {fileID: 277037714248836320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &331110382
 GameObject:
   m_ObjectHideFlags: 0
@@ -8612,7 +8622,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -8640,6 +8650,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &337920830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4376990877413117052, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+  m_PrefabInstance: {fileID: 2307056399016527449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &345632473
 GameObject:
   m_ObjectHideFlags: 0
@@ -8883,7 +8898,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -8911,6 +8926,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &363573026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 421929720652478165, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+  m_PrefabInstance: {fileID: 2307056399016527449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &365546087
 GameObject:
   m_ObjectHideFlags: 0
@@ -10468,7 +10488,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -10496,6 +10516,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &438574075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 792031420341950473, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+  m_PrefabInstance: {fileID: 6344074703786751326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &441204124
 GameObject:
   m_ObjectHideFlags: 0
@@ -13496,7 +13521,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -13524,6 +13549,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &566276300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5337256382648955092, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+  m_PrefabInstance: {fileID: 1443227197045059671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566774143
 GameObject:
   m_ObjectHideFlags: 0
@@ -14657,7 +14687,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -14685,6 +14715,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &618824843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4092278275921679614, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+  m_PrefabInstance: {fileID: 7736993813106378527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619313220
 GameObject:
   m_ObjectHideFlags: 0
@@ -15388,7 +15423,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -15416,6 +15451,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &644926032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8319682045999843965, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+  m_PrefabInstance: {fileID: 1443227197045059671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649591042
 GameObject:
   m_ObjectHideFlags: 0
@@ -20102,7 +20142,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -20130,6 +20170,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &869609844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3718021359671976608, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+  m_PrefabInstance: {fileID: 6344074703786751326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &880124097
 GameObject:
   m_ObjectHideFlags: 0
@@ -23136,7 +23181,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -23164,6 +23209,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &996035598 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3643834953853991707, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+  m_PrefabInstance: {fileID: 7736993813106378527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &997822979
 GameObject:
   m_ObjectHideFlags: 0
@@ -25850,7 +25900,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -25878,6 +25928,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1101530736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8801605524267386245, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+  m_PrefabInstance: {fileID: 4207257747578370997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1102204355
 GameObject:
   m_ObjectHideFlags: 0
@@ -26111,7 +26166,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -26139,6 +26194,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1113298345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 861678803789824434, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+  m_PrefabInstance: {fileID: 7736993813106378527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114543576
 GameObject:
   m_ObjectHideFlags: 0
@@ -28221,7 +28281,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -28249,6 +28309,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1201279530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 572847713550210403, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+  m_PrefabInstance: {fileID: 277037714248836320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204149669
 GameObject:
   m_ObjectHideFlags: 0
@@ -30018,7 +30083,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -30046,6 +30111,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1274756271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 279144148446349884, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+  m_PrefabInstance: {fileID: 4207257747578370997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1279430894
 GameObject:
   m_ObjectHideFlags: 0
@@ -32229,7 +32299,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -32257,6 +32327,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1361130476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 760931544936269252, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+  m_PrefabInstance: {fileID: 1443227197045059671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1362815019
 GameObject:
   m_ObjectHideFlags: 0
@@ -32905,7 +32980,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -32933,6 +33008,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1393267610 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5146990565856174195, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+  m_PrefabInstance: {fileID: 277037714248836320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1394185554
 GameObject:
   m_ObjectHideFlags: 0
@@ -37789,7 +37869,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -37817,6 +37897,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1622978154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1117401941415680304, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+  m_PrefabInstance: {fileID: 2307056399016527449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627309737
 GameObject:
   m_ObjectHideFlags: 0
@@ -39707,7 +39792,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -39735,6 +39820,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1698112256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8944381203897612652, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+  m_PrefabInstance: {fileID: 2307056399016527449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703306030
 GameObject:
   m_ObjectHideFlags: 0
@@ -41663,7 +41753,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -41691,6 +41781,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1765404429 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5360195270431010073, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+  m_PrefabInstance: {fileID: 6344074703786751326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773405563
 GameObject:
   m_ObjectHideFlags: 0
@@ -45548,7 +45643,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -45576,6 +45671,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &1950063907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4232104664028950677, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+  m_PrefabInstance: {fileID: 4207257747578370997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954136361
 GameObject:
   m_ObjectHideFlags: 0
@@ -47177,7 +47277,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -47205,6 +47305,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &2015820246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9081795060547902170, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+  m_PrefabInstance: {fileID: 277037714248836320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2016792349
 GameObject:
   m_ObjectHideFlags: 0
@@ -47765,7 +47870,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -47793,6 +47898,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &2036064184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 685824649497699801, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+  m_PrefabInstance: {fileID: 4207257747578370997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041151461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5343389135396133338, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
@@ -47809,7 +47919,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -47837,6 +47947,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &2041151466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4161925594878201157, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+  m_PrefabInstance: {fileID: 6344074703786751326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2046936296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2047c42c6c9e4fe4c918f43b0cf00a14, type: 3}
@@ -47941,7 +48056,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
+    spring: 20000
     damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -47969,6 +48084,11 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!4 &2057546028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8731990672204522904, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+  m_PrefabInstance: {fileID: 1443227197045059671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073042368
 GameObject:
   m_ObjectHideFlags: 0
@@ -50050,6 +50170,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 1393267609}
+    - target: {fileID: 6848655539519899275, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 2015820246}
+    - target: {fileID: 6848655539519899275, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 327669506}
+    - target: {fileID: 6848655539519899275, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 1201279530}
+    - target: {fileID: 6848655539519899275, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 1393267610}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50091,6 +50227,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 566276299}
+    - target: {fileID: 2445913103455124576, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 644926032}
+    - target: {fileID: 2445913103455124576, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 2057546028}
+    - target: {fileID: 2445913103455124576, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 1361130476}
+    - target: {fileID: 2445913103455124576, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 566276300}
     - target: {fileID: 4167294844265884436, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
       propertyPath: m_Name
       value: Armor
@@ -50192,6 +50344,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 337920829}
+    - target: {fileID: 6046239961019150454, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 363573026}
+    - target: {fileID: 6046239961019150454, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 1622978154}
+    - target: {fileID: 6046239961019150454, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 1698112256}
+    - target: {fileID: 6046239961019150454, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 337920830}
     - target: {fileID: 8430221146797172607, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -50341,6 +50509,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 1950063906}
+    - target: {fileID: 8458239213020430455, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 1274756271}
+    - target: {fileID: 8458239213020430455, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 2036064184}
+    - target: {fileID: 8458239213020430455, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 1101530736}
+    - target: {fileID: 8458239213020430455, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 1950063907}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50442,6 +50626,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 438574074}
+    - target: {fileID: 5312806243373479425, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 869609844}
+    - target: {fileID: 5312806243373479425, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 2041151466}
+    - target: {fileID: 5312806243373479425, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 1765404429}
+    - target: {fileID: 5312806243373479425, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 438574075}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50539,6 +50739,22 @@ PrefabInstance:
       propertyPath: frontRightWheel
       value: 
       objectReference: {fileID: 1113298344}
+    - target: {fileID: 7391642031301708396, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+      propertyPath: rearLeftWheelTransform
+      value: 
+      objectReference: {fileID: 996035598}
+    - target: {fileID: 7391642031301708396, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+      propertyPath: frontLeftWheelTransform
+      value: 
+      objectReference: {fileID: 618824843}
+    - target: {fileID: 7391642031301708396, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+      propertyPath: rearRightWheelTransform
+      value: 
+      objectReference: {fileID: 34735444}
+    - target: {fileID: 7391642031301708396, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+      propertyPath: frontRightWheelTransform
+      value: 
+      objectReference: {fileID: 1113298345}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
