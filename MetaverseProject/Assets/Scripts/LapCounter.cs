@@ -37,8 +37,6 @@ public class RaceManager : MonoBehaviour
         racingTime = 0;
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        finishGamePanel.SetActive(true);
     }
 
     void Update()
@@ -54,7 +52,6 @@ public class RaceManager : MonoBehaviour
         if (isreplayed)
         {
             SceneManager.LoadScene("SampleScene");
-            SaveData();
         }
 
         // 게임 종료 버튼 클릭
