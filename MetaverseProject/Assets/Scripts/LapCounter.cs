@@ -1,3 +1,5 @@
+using Firebase.Database;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
@@ -16,14 +18,28 @@ public class RaceManager : MonoBehaviour
     private bool isreplayed;
     private bool isfinished;
 
+    public TMP_Text timeText;
+    private float racingTime;
+    private bool raceStarted;
+
     void Start()
     {
         isreplayed = false;
         isfinished = false;
+        raceStarted = false;
+
+        racingTime = 0;
     }
 
     void Update()
     {
+        // 시간 측정
+        if (raceStarted && !isRaceFinished)
+        {
+            racingTime += Time.deltaTime;
+            timeText.text = "Time : " + float.Parse(racingTime.ToString("F2"));
+        }
+
         // 다시 하기 버튼 클릭
         if (isreplayed)
         {
@@ -85,6 +101,11 @@ public class RaceManager : MonoBehaviour
     public void FinishButton()
     {
         isfinished = true;
+    }
+
+    public void StartRace()
+    {
+        raceStarted = true;
     }
 }
 
