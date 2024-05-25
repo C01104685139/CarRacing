@@ -257,7 +257,7 @@ public class RaceManager : MonoBehaviour
                 // 순위 반영
                 foreach (var user in top5)
                 {
-                    tmp[cnt] = cnt++ + "등 : "+ user.userEmail +" → "+ user.timeRecord + "초";
+                    tmp[cnt] = cnt++ + "등 : "+ user.userEmail.Replace("_", ".") + " → "+ user.timeRecord + "초";
                     Debug.Log("User: " + user.userEmail + ", Time: " + user.timeRecord);
                 }
 
