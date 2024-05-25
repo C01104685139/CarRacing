@@ -1,4 +1,7 @@
 using Firebase.Database;
+using Firebase.Auth;
+using Firebase.Extensions;
+using Firebase;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +25,9 @@ public class RaceManager : MonoBehaviour
     private float racingTime;
     private bool raceStarted;
 
+    private DatabaseReference reference;
+    private string userEmail;
+
     void Start()
     {
         isreplayed = false;
@@ -29,6 +35,8 @@ public class RaceManager : MonoBehaviour
         raceStarted = false;
 
         racingTime = 0;
+
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     void Update()
@@ -37,7 +45,7 @@ public class RaceManager : MonoBehaviour
         if (raceStarted && !isRaceFinished)
         {
             racingTime += Time.deltaTime;
-            timeText.text = "Time : " + float.Parse(racingTime.ToString("F2"));
+            timeText.text = "Time : " + racingTime.ToString("F2");
         }
 
         // 다시 하기 버튼 클릭
@@ -91,6 +99,10 @@ public class RaceManager : MonoBehaviour
 
         // 재시작 or 종료 선택
         finishGamePanel.SetActive(true);
+
+        // 레이스 결과 저장
+        // 저장할 데이터 : 사용자 이메일, 레이싱 맵 번호, 시간 기록
+        SaveData();
     }
 
     public void ReplayButton()
@@ -107,5 +119,84 @@ public class RaceManager : MonoBehaviour
     {
         raceStarted = true;
     }
-}
 
+    private void SaveData()
+    {
+        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+        FirebaseUser user = auth.CurrentUser;
+
+        if (user != null)
+        {
+            // 현재 사용자의 이메일
+            userEmail = user.Email.Replace(".", "_");
+            Debug.Log("User Email: " + userEmail);
+        }
+        else
+        {
+            Debug.Log("No user information");
+        }
+
+        string mapName = SceneManager.GetActiveScene().name;
+        float currentTime = float.Parse(racingTime.ToString("F2"));
+
+        // 데이터 로드
+        FirebaseDatabase.DefaultInstance.GetReference("Records").GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Error : " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+
+                // 데이터베이스에 값이 없는 경우 새로운 기록 추가
+                if (!snapshot.Exists)
+                {
+                    reference.Child("Records").Child(userEmail).Child(mapName).Push().SetRawJsonValueAsync(currentTime.ToString());
+                    return;
+                }
+
+                foreach (DataSnapshot userSnapshot in snapshot.Children)
+                {
+                    string savedUser = userSnapshot.Key;
+
+                    if (savedUser == userEmail) // 현재 사용자가 저장되어 있을 때
+                    {
+                        foreach (DataSnapshot mapSnapshot in userSnapshot.Children)
+                        {
+                            string savedMapName = mapSnapshot.Key;
+
+                            if (savedMapName == mapName) // 현재 맵 기록이 저장되어 있을 때
+                            {
+                                foreach (DataSnapshot recordSnapshot in mapSnapshot.Children)
+                                {
+                                    float savedRecord = float.Parse(recordSnapshot.Value.ToString());
+
+                                    Debug.Log("Map: " + savedMapName + ", User: " + savedUser + ", Time Record: " + savedRecord);
+                                    Debug.Log("savedTime: " + savedRecord);
+                                    Debug.Log("currentTime: " + currentTime);
+
+                                    if (currentTime < savedRecord)
+                                    { // 기록이 더 좋을 때 갱신
+                                        reference.Child("Records").Child(userEmail).Child(mapName).Child(recordSnapshot.Key).SetValueAsync(currentTime);
+                                    }
+                                    
+                                }
+                            }
+                            else
+                            { // 사용자가 해당 맵에서 처음 기록을 세움 (새로 저장)
+                                reference.Child("Records").Child(userEmail).Child(mapName).Push().SetRawJsonValueAsync(currentTime.ToString());
+                            }
+                        }
+                    }
+                    else
+                    { // 사용자의 기록이 없음 (새로 저장)
+                        reference.Child("Records").Child(userEmail).Child(mapName).Push().SetRawJsonValueAsync(currentTime.ToString());
+                    }
+                }
+            }
+        });
+        
+    }
+}
