@@ -29,6 +29,11 @@ public class CarController : MonoBehaviour
     private float rotationSmoothTime = 0.1f; // 회전 보간 시간
 
     private bool stopMovingAtStart; // 게임 맵 시작 시 자동차 움직임 제한
+    
+    public float upDrag = 1.5f;
+    float dragSaved;
+    public bool isShift = false;
+    public float slowSpeed = 100f;
 
     void Start()
     {
@@ -43,6 +48,7 @@ public class CarController : MonoBehaviour
         suspensionHeight = 0.1f;
 
         rb = GetComponent<Rigidbody>();
+        //playerTrail = GetComponent<PlayerTrail>();
         rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
         rb.mass = 2000f; //자동차의 질량 조정
         rb.drag = 0.5f; //공기 저항 설정
@@ -52,6 +58,8 @@ public class CarController : MonoBehaviour
         frontRightWheel.suspensionDistance = suspensionHeight;
         rearLeftWheel.suspensionDistance = suspensionHeight;
         rearRightWheel.suspensionDistance = suspensionHeight; //서스펜션 높이 설정
+
+        dragSaved = rb.drag;
 
         //자동차에 대한 선택 여부 확인
         if (!gameObject.CompareTag(selectedCarTag))
@@ -179,6 +187,30 @@ public class CarController : MonoBehaviour
                 float rotation = rotationSpeed * Time.fixedDeltaTime;
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                isShift = true;
+                rb.drag = upDrag;
+                //playerTrail.DriftDraw();
+                rb.AddForce(-transform.right * (moveSpeed * 100 - (slowSpeed * 100)) * Time.deltaTime);
+                transform.Rotate(0, -1, 0);
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
+            {
+                isShift = true;
+                rb.drag = upDrag;
+                //playerTrail.DriftDraw();
+                rb.AddForce(transform.right * (moveSpeed * 100 - (slowSpeed * 100)) * Time.deltaTime);
+                transform.Rotate(0, 1, 0);
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                isShift = false;
+                rb.drag = dragSaved; // 다시 원래 drag로
+                //playerTrail.DriftRemove();
             }
         }
     }
