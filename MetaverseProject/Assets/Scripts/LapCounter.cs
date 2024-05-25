@@ -45,8 +45,6 @@ public class RaceManager : MonoBehaviour
         racingTime = 0;
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        UpdateRank();
     }
 
     void Update()
