@@ -220,5 +220,15 @@ public class CarController : MonoBehaviour
     {
         stopMovingAtStart = status;
     }
+
+    // shadow mode car 과 충돌 처리 해제
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ShadowCar"))
+        {
+            // 충돌 무시하고 통과하게 됨
+            other.isTrigger = true;
+        }
+    }
 }
 
