@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.622985, g: 0.7167068, b: 0.8717912, a: 1}
+  m_IndirectSpecularColor: {r: 0.6229919, g: 0.71671546, b: 0.87179804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -895,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33354856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444946, y: 0.578272, z: 0.12824912, w: 0.78658825}
+  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824911, w: 0.7865883}
   m_LocalPosition: {x: -270.88385, y: -23.662014, z: -0.4383545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19095,7 +19095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862305079}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17444946, y: 0.578272, z: 0.12824912, w: 0.78658825}
+  m_LocalRotation: {x: -0.17444952, y: 0.5782719, z: 0.12824911, w: 0.7865883}
   m_LocalPosition: {x: 129.14647, y: -1.3999996, z: 182.75066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21166,9 +21166,10 @@ GameObject:
   - component: {fileID: 900067041}
   - component: {fileID: 900067040}
   - component: {fileID: 900067039}
+  - component: {fileID: 900067042}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: ShadowCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21261,6 +21262,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 900067042}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: selectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &900067040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21299,6 +21312,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900067037}
   m_CullTransparentMesh: 1
+--- !u!114 &900067042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900067037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902611483
 GameObject:
   m_ObjectHideFlags: 0
@@ -48086,9 +48111,10 @@ GameObject:
   - component: {fileID: 2006243773}
   - component: {fileID: 2006243772}
   - component: {fileID: 2006243771}
+  - component: {fileID: 2006243774}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48181,6 +48207,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2006243774}
+        m_TargetAssemblyTypeName: SelectManager, Assembly-CSharp
+        m_MethodName: selectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2006243772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48219,6 +48257,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006243769}
   m_CullTransparentMesh: 1
+--- !u!114 &2006243774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006243769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8161f33d88e76eb4c8ee47ffb5fb6463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012827554
 GameObject:
   m_ObjectHideFlags: 0

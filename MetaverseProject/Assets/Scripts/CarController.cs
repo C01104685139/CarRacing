@@ -9,6 +9,7 @@ public class CarController : MonoBehaviour
     public float maxSpeed; //자동차의 최대 속도
     public float accelerationFactor; //가속 계수
     private string selectedCarTag; //대기실에서 선택된 자동차의 태그
+    private string selectedModeTag; //대기실에서 선택된 모드 태그
 
     private Rigidbody rb;
 
@@ -45,6 +46,7 @@ public class CarController : MonoBehaviour
         accelerationFactor = 2f;
 
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+        selectedModeTag = PlayerPrefs.GetString("selectedModeTag");
         suspensionHeight = 0.1f;
 
         rb = GetComponent<Rigidbody>();
@@ -67,6 +69,13 @@ public class CarController : MonoBehaviour
             //선택되지 않음->비활성화
             gameObject.SetActive(false);
         }
+
+        // 모드 반영
+        if (selectedModeTag != "ShadowCar")
+        {
+            GameObject cart = GameObject.FindWithTag("ShadowCar");
+            cart.SetActive(false);
+        } 
         
     }
 

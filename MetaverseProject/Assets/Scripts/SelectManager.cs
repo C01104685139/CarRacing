@@ -12,8 +12,6 @@ public class SelectManager : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
-    
-
     public void YesLogout() //로그아웃 Yes버튼 클릭 시 로그아웃
     {
         auth.SignOut();
@@ -26,6 +24,15 @@ public class SelectManager : MonoBehaviour
         
         PlayerPrefs.SetString("selectedCarTag", carTag);
         Debug.Log("선택된 차 : " + carTag);
+    }
+
+    public void selectMode() // 모드 선택
+    {
+        GameObject modeButton = EventSystem.current.currentSelectedGameObject;
+        string modeTag = modeButton.tag;
+
+        PlayerPrefs.SetString("selectedModeTag", modeTag);
+        Debug.Log("선택된 모드 : " + modeTag);
     }
 
     public void race1SceneChange() //race1으로 씬 변경

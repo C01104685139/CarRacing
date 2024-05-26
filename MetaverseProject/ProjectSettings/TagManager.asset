@@ -13,6 +13,7 @@ TagManager:
   - Roadster
   - LapCounter
   - ShadowCar
+  - Normal
   layers:
   - Default
   - TransparentFX
