@@ -35,8 +35,11 @@ public class CarController : MonoBehaviour
     public bool isShift = false;
     public float slowSpeed = 100f;
 
+    Vector3 firstPos;
+
     void Start()
     {
+        firstPos=transform.position;
         stopMovingAtStart = false;
 
         moveSpeed = 10f;
@@ -58,6 +61,8 @@ public class CarController : MonoBehaviour
         frontRightWheel.suspensionDistance = suspensionHeight;
         rearLeftWheel.suspensionDistance = suspensionHeight;
         rearRightWheel.suspensionDistance = suspensionHeight; //서스펜션 높이 설정
+
+        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
 
         dragSaved = rb.drag;
 
@@ -221,14 +226,8 @@ public class CarController : MonoBehaviour
         stopMovingAtStart = status;
     }
 
-    // shadow mode car 과 충돌 처리 해제
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("ShadowCar"))
-        {
-            // 충돌 무시하고 통과하게 됨
-            other.isTrigger = true;
-        }
+    private void OnTriggerEnter(Collider other){
+        if (other.tag == "Ground") transform.position = firstPos; 
     }
 }
 
