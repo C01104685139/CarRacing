@@ -62,7 +62,7 @@ public class ShadowCarController : MonoBehaviour
         if (other.CompareTag("LapCounter") && !isfinished)
         {
             currentLap++;
-            Debug.Log("currentLap: " + currentLap);
+            Debug.Log("shadowModeCurrentLap: " + currentLap);
             if (currentLap == lapCount)
             {
                 isfinished = true;
