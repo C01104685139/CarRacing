@@ -31,25 +31,30 @@ public class ShadowCarController : MonoBehaviour
         path = cart.m_Path;
         totalDistance = path.PathLength * 3;
 
+        StartCoroutine(StopMovingAtFirst()); // 카운트다운 3초 동안 멈춰있기
+
         // 해당 맵의 1등 기록 가져오기
         loadRecord();
+    }
+
+    IEnumerator StopMovingAtFirst()
+    { 
+        float time = 0f;
+        while (time < 3f)
+        {
+            cart.m_Speed = 0f;
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        shadowCarspeed = totalDistance / firstRecord;
+        cart.m_Speed = shadowCarspeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isfinished)
-        {
-            if (firstRecord != 0f)
-            {
-                shadowCarspeed = totalDistance / firstRecord;
-                cart.m_Speed = shadowCarspeed;
-            }
-            else
-            {
-                cart.m_Speed = 0f;
-            }
-        }
+
     }
 
     void OnTriggerEnter(Collider other)
