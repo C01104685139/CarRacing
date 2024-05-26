@@ -42,9 +42,9 @@ public class Countdown : MonoBehaviour
             countdowntime--;
         }
         countdown.text = "Go!";
-        SoundController.instance.PlaySound("StartBeep");//스타트 효과음
         RectTransform rectTransform = countdown.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(150, 0);
+        SoundController.instance.PlaySound("StartBeep");//스타트 효과음
         yield return new WaitForSeconds(1f);
         countdown.gameObject.SetActive(false);
 

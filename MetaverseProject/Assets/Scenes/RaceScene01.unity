@@ -51133,15 +51133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3718021359671976608, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3718021359671976608, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3718021359671976608, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5312806243373479425, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: rearLeftWheel
@@ -51177,15 +51177,15 @@ PrefabInstance:
       objectReference: {fileID: 438574075}
     - target: {fileID: 5360195270431010073, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5360195270431010073, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5360195270431010073, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
