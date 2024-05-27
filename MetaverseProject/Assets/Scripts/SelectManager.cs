@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
 
-
 public class SelectManager : MonoBehaviour
 {
     Firebase.Auth.FirebaseAuth auth;
-    Firebase.Auth.FirebaseUser user;
+
+    void Start ()
+    {
+        auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+    }
 
     public void YesLogout() //로그아웃 Yes버튼 클릭 시 로그아웃
     {
         auth.SignOut();
+        SceneManager.LoadScene("LoginScene");
     }
 
     public void selectCar() // 해당 차의 태그 저장
