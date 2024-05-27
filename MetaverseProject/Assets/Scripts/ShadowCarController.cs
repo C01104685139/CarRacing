@@ -43,11 +43,11 @@ public class ShadowCarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stopMoving)
+        if (stopMoving || isfinished)
         {
             cart.m_Speed = 0f;
         }
-        else
+        else 
         {
             shadowCarspeed = totalDistance / firstRecord;
             cart.m_Speed = shadowCarspeed;
@@ -64,7 +64,6 @@ public class ShadowCarController : MonoBehaviour
             if (currentLap == lapCount)
             {
                 isfinished = true;
-                cart.m_Speed = 0f;
             }
         }
     }
