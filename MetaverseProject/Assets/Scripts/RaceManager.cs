@@ -27,6 +27,7 @@ public class RaceManager : MonoBehaviour
     private DatabaseReference reference;
     private string userEmail;
 
+    private List<RaceRecords> recordList; // 불러온 주행 기록 저장할 리스트
     public TMP_Text first;
     public TMP_Text second;
     public TMP_Text third;
@@ -41,6 +42,7 @@ public class RaceManager : MonoBehaviour
         isreplayed = false;
         isfinished = false;
         raceStarted = false;
+        recordList = new List<RaceRecords>();
 
         racingTime = 0;
 
@@ -203,10 +205,7 @@ public class RaceManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
-                DataSnapshot snapshot = task.Result;
-
-                // 불러온 주행 기록 저장할 리스트
-                List<RaceRecords> recordList = new List<RaceRecords>();
+                DataSnapshot snapshot = task.Result;  
 
                 // 데이터 기록 가져오기
                 foreach (DataSnapshot userSnapshot in snapshot.Children)

@@ -7376,7 +7376,7 @@ Transform:
   m_GameObject: {fileID: 429031516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55, y: 1, z: 6}
+  m_LocalPosition: {x: -55, y: 0.45, z: 6}
   m_LocalScale: {x: 70, y: 0, z: 3.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7447,7 +7447,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
