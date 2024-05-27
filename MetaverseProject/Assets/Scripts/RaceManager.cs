@@ -7,6 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -36,6 +37,9 @@ public class RaceManager : MonoBehaviour
     public TMP_Text fourth;
     public TMP_Text fifth;
 
+    public Text LapText;
+    public Text FinishText;
+
     void Start()
     {
         isreplayed = false;
@@ -45,6 +49,8 @@ public class RaceManager : MonoBehaviour
         racingTime = 0;
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        UpdateLapText();
     }
 
     void Update()
@@ -81,29 +87,34 @@ public class RaceManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //피니시 라인 태그와 일치하는 경우
-        if (other.CompareTag(checkpointTag)) {
-            int checkpointIndex = System.Array.IndexOf(other.GetComponentsInChildren<Transform>(), other.transform);
-            
-            if (checkpointIndex == lastCheckpointIndex + 1) {
-                currentLapCount++;
-                lastCheckpointIndex = checkpointIndex;
+        if (other.CompareTag("LapCounter")) {
+            currentLapCount++;
+            UpdateLapText();
 
-                // 현재 랩 수가 총 랩 수 이상인 경우 레이스 종료
-                if (currentLapCount >= totalLapCount)
-                {
-                    FinishRace();
-                }
+            if(currentLap>=totalLaps){
+                FinishRace();
             }
         }
     }
+
+    private int currentLap=0;
+    private int totalLaps=3;
+
+    void UpdateLapText()
+    {
+        if (LapText != null)
+        {
+            LapText.text = "Lap: " + currentLap + "/" + totalLaps;
+        }
+    }
+
 
     private void FinishRace()
     {
         //레이스 종료 상태 설정
         isRaceFinished = true;
         //레이스 종료 메시지 출력
-        Debug.Log("Race finished!");
-        //운전 못하게 하는 코드 추가
+        FinishText.text = "Race Finished!";
 
 
         // 레이스 결과 저장
