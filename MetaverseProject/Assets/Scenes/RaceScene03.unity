@@ -2302,7 +2302,10 @@ PrefabInstance:
       addedObject: {fileID: 157952284}
     - targetCorrespondingSourceObject: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 157952285}
+      addedObject: {fileID: 157952290}
+    - targetCorrespondingSourceObject: {fileID: 3176899279463934745, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 157952289}
     - targetCorrespondingSourceObject: {fileID: 642043863967734316, guid: 2b9740604a0b1864cb2ce63776bd3185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1905954335}
@@ -2372,7 +2375,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &157952285
+--- !u!114 &157952289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2381,19 +2384,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 157952281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &157952290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157952281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2378812, y: 1.0884526, z: 3.9845777}
+  m_Center: {x: 0.00000017881398, y: 0.7377857, z: 0.03252227}
 --- !u!1 &162836402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,7 +3665,10 @@ PrefabInstance:
       addedObject: {fileID: 280918099}
     - targetCorrespondingSourceObject: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 280918100}
+      addedObject: {fileID: 280918105}
+    - targetCorrespondingSourceObject: {fileID: 2138393120368064067, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 280918104}
     - targetCorrespondingSourceObject: {fileID: 1775254459898221125, guid: c2fa195f47fd3ee428ed824275047eff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1169496783}
@@ -3719,7 +3738,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &280918100
+--- !u!114 &280918104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3728,19 +3747,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 280918096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &280918105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280918096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0823085, y: 0.86728305, z: 3.5994158}
+  m_Center: {x: 0.00000023841864, y: 0.59694326, z: -0.16890024}
 --- !u!1 &282252684
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,7 +6882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
   finishGamePanel: {fileID: 2050572565}
   timeText: {fileID: 1586970841}
   first: {fileID: 675693251}
@@ -6858,8 +6889,6 @@ MonoBehaviour:
   third: {fileID: 902551766}
   fourth: {fileID: 1519486243}
   fifth: {fileID: 1166873998}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
 --- !u!4 &595763614
 Transform:
   m_ObjectHideFlags: 0
@@ -7902,7 +7931,10 @@ PrefabInstance:
       addedObject: {fileID: 747785126}
     - targetCorrespondingSourceObject: {fileID: 4677342151307450362, guid: e3901609142097842ae91e4fb5732661, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 747785127}
+      addedObject: {fileID: 747785132}
+    - targetCorrespondingSourceObject: {fileID: 4677342151307450362, guid: e3901609142097842ae91e4fb5732661, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 747785131}
     - targetCorrespondingSourceObject: {fileID: 5149379594540616797, guid: e3901609142097842ae91e4fb5732661, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1840258152}
@@ -7984,7 +8016,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &747785127
+--- !u!114 &747785131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7993,19 +8025,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 747785123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &747785132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747785123}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9613194, y: 1.0558982, z: 3.87128}
+  m_Center: {x: 0.00000008940699, y: 0.6589484, z: -0.13684025}
 --- !u!1 &754487119
 GameObject:
   m_ObjectHideFlags: 0
@@ -9409,7 +9454,6 @@ GameObject:
   - component: {fileID: 867938081}
   - component: {fileID: 867938080}
   - component: {fileID: 867938079}
-  - component: {fileID: 867938082}
   m_Layer: 0
   m_Name: Plane
   m_TagString: LapCounter
@@ -9447,11 +9491,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &867938080
@@ -9504,27 +9548,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867938077}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &867938082
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867938077}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9.999999, y: 0, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &872666660
 GameObject:
   m_ObjectHideFlags: 0
@@ -13560,7 +13583,10 @@ PrefabInstance:
       addedObject: {fileID: 1195458965}
     - targetCorrespondingSourceObject: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1195458966}
+      addedObject: {fileID: 1195458970}
+    - targetCorrespondingSourceObject: {fileID: 4542008615411475357, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1195458971}
     - targetCorrespondingSourceObject: {fileID: 6493101340277213021, guid: 6f3807d7157f1b74c97c15be04f56387, type: 3}
       insertIndex: -1
       addedObject: {fileID: 884131362}
@@ -13630,7 +13656,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &1195458966
+--- !u!114 &1195458970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13639,19 +13665,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195458962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &1195458971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195458962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8875041, y: 1.338424, z: 3.7269282}
+  m_Center: {x: 0.00000020861631, y: 0.83119833, z: 0.010030928}
 --- !u!1 &1211576096
 GameObject:
   m_ObjectHideFlags: 0
@@ -21763,7 +21802,10 @@ PrefabInstance:
       addedObject: {fileID: 1992926880}
     - targetCorrespondingSourceObject: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1992926881}
+      addedObject: {fileID: 1992926886}
+    - targetCorrespondingSourceObject: {fileID: 5584109740712597081, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992926885}
     - targetCorrespondingSourceObject: {fileID: 2451515570728315236, guid: c0726444058a0bb4c8a6f8662eee4dbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1326899393}
@@ -21833,7 +21875,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &1992926881
+--- !u!114 &1992926885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21842,19 +21884,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992926877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &1992926886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992926877}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2333665, y: 0.9129199, z: 4.2220964}
+  m_Center: {x: 0.0000005364419, y: 0.59042627, z: 0.05241121}
 --- !u!1 &1999861678
 GameObject:
   m_ObjectHideFlags: 0
@@ -22192,7 +22247,10 @@ PrefabInstance:
       addedObject: {fileID: 2042306461}
     - targetCorrespondingSourceObject: {fileID: 248848106957734536, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2042306462}
+      addedObject: {fileID: 2042306467}
+    - targetCorrespondingSourceObject: {fileID: 248848106957734536, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2042306466}
     - targetCorrespondingSourceObject: {fileID: 9098477533200697055, guid: 62edff5b57ae14b45995639ba0ead0ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 917856238}
@@ -22262,7 +22320,7 @@ MonoBehaviour:
   upDrag: 1.5
   isShift: 0
   slowSpeed: 100
---- !u!114 &2042306462
+--- !u!114 &2042306466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22271,19 +22329,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042306458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 520651344}
+  isLapFinished: 0
+--- !u!65 &2042306467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042306458}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0998945, y: 1.1413546, z: 3.983077}
+  m_Center: {x: 0.00000011920932, y: 0.8198943, z: -0.03968389}
 --- !u!1 &2050572565
 GameObject:
   m_ObjectHideFlags: 0
