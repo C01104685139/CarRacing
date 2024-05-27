@@ -31,6 +31,8 @@ public class Countdown : MonoBehaviour
         CarController carController = GameObject.Find(selectedCarTag).GetComponent<CarController>();
         carController.StartMoving(false);
 
+        ShadowCarController shadowCarController = GameObject.FindWithTag("ShadowCar").GetComponent<ShadowCarController>();
+
         RaceManager raceManager = GameObject.Find("RaceManager").GetComponent<RaceManager>();
 
         while (countdowntime > 0)
@@ -49,6 +51,7 @@ public class Countdown : MonoBehaviour
         countdown.gameObject.SetActive(false);
 
         carController.StartMoving(true);
+        shadowCarController.stopMoving = false;
         raceManager.StartRace();
     }
 }
