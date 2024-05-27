@@ -26,8 +26,6 @@ public class CarController : MonoBehaviour
 
     public float suspensionHeight; //원하는 서스펜션 높이
 
-    private float currentYAngle;
-    private float yAngleVelocity;
     private float rotationSmoothTime = 0.1f; // 회전 보간 시간
 
     private bool stopMovingAtStart; // 게임 맵 시작 시 자동차 움직임 제한
@@ -55,7 +53,6 @@ public class CarController : MonoBehaviour
         suspensionHeight = 0.1f;
 
         rb = GetComponent<Rigidbody>();
-        //playerTrail = GetComponent<PlayerTrail>();
         rb.interpolation = RigidbodyInterpolation.Interpolate; //보간 설정 사용
         rb.mass = 2000f; //자동차의 질량 조정
         rb.drag = 0.5f; //공기 저항 설정
@@ -209,7 +206,6 @@ public class CarController : MonoBehaviour
             {
                 isShift = true;
                 rb.drag = upDrag;
-                //playerTrail.DriftDraw();
                 rb.AddForce(-transform.right * (moveSpeed * 100 - (slowSpeed * 100)) * Time.deltaTime);
                 transform.Rotate(0, -1, 0);
             }
@@ -218,7 +214,6 @@ public class CarController : MonoBehaviour
             {
                 isShift = true;
                 rb.drag = upDrag;
-                //playerTrail.DriftDraw();
                 rb.AddForce(transform.right * (moveSpeed * 100 - (slowSpeed * 100)) * Time.deltaTime);
                 transform.Rotate(0, 1, 0);
             }
@@ -226,7 +221,6 @@ public class CarController : MonoBehaviour
             {
                 isShift = false;
                 rb.drag = dragSaved; // 다시 원래 drag로
-                //playerTrail.DriftRemove();
             }
         }
     }
