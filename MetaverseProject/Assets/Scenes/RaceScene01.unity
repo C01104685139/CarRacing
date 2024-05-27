@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43114805, g: 0.4960134, b: 0.6033422, a: 1}
+  m_IndirectSpecularColor: {r: 0.43115324, g: 0.49601996, b: 0.6033466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
   finishGamePanel: {fileID: 178696540}
   timeText: {fileID: 450834044}
   first: {fileID: 1070595066}
@@ -243,8 +242,6 @@ MonoBehaviour:
   third: {fileID: 1102204357}
   fourth: {fileID: 1376589822}
   fifth: {fileID: 483653052}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
 --- !u!4 &5105223
 Transform:
   m_ObjectHideFlags: 0
@@ -265,7 +262,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6401553234864159098, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
   m_PrefabInstance: {fileID: 277037714248836320}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9652554
+--- !u!65 &9652560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9652542}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.233366, y: 0.9129199, z: 4.2220955}
+  m_Center: {x: 0.0000005364418, y: 0.59042627, z: 0.0524112}
+--- !u!114 &9652561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,25 +292,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 9652542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &9931169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2512669279713735120, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
   m_PrefabInstance: {fileID: 6344074703786751326}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9931181
+--- !u!65 &9931187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9931169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2378807, y: 1.0884526, z: 3.9845767}
+  m_Center: {x: 0.00000017881393, y: 0.7377857, z: 0.03252226}
+--- !u!114 &9931188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,19 +332,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9931169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &11890679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,7 +2427,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3717258776072716538, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
   m_PrefabInstance: {fileID: 2307056399016527449}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &110566701
+--- !u!65 &110566707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110566695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8875036, y: 1.338424, z: 3.7269273}
+  m_Center: {x: 0.00000020861626, y: 0.83119833, z: 0.010030925}
+--- !u!114 &110566708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2413,19 +2457,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 110566695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &112483495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4625,7 +4661,6 @@ GameObject:
   - component: {fileID: 172350180}
   - component: {fileID: 172350179}
   - component: {fileID: 172350178}
-  - component: {fileID: 172350181}
   m_Layer: 0
   m_Name: Plane
   m_TagString: LapCounter
@@ -4642,7 +4677,7 @@ Transform:
   m_GameObject: {fileID: 172350176}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.3, y: 0, z: 3.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4663,11 +4698,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &172350179
@@ -4720,27 +4755,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172350176}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &172350181
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172350176}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10.000002, y: 0, z: 10.000002}
-  m_Center: {x: 0.00048828125, y: 0, z: 0}
 --- !u!1 &177594398
 GameObject:
   m_ObjectHideFlags: 0
@@ -9939,7 +9953,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6655765370693626491, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
   m_PrefabInstance: {fileID: 7736993813106378527}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &385664990
+--- !u!65 &385664996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385664984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.961319, y: 1.0558982, z: 3.871279}
+  m_Center: {x: 0.00000008940697, y: 0.6589484, z: -0.13684022}
+--- !u!114 &385664997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9948,19 +9983,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 385664984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &390349882
 GameObject:
   m_ObjectHideFlags: 0
@@ -16751,7 +16778,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5236132717692067600, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
   m_PrefabInstance: {fileID: 4207257747578370997}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &707081994
+--- !u!65 &707082000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707081988}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.082308, y: 0.86728305, z: 3.5994148}
+  m_Center: {x: 0.00000023841858, y: 0.59694326, z: -0.16890019}
+--- !u!114 &707082001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16760,19 +16808,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 707081988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &714204512
 GameObject:
   m_ObjectHideFlags: 0
@@ -18659,7 +18699,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4167294844265884436, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
   m_PrefabInstance: {fileID: 1443227197045059671}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &778568312
+--- !u!65 &778568318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778568306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.099894, y: 1.1413546, z: 3.983076}
+  m_Center: {x: 0.00000011920929, y: 0.8198943, z: -0.03968388}
+--- !u!114 &778568319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18668,19 +18729,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 778568306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cae9a3811e22043b7d8880009d810c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65b784dc0c381dc41b180f6fc3c57d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointTag: Checkpoint
-  finishGamePanel: {fileID: 0}
-  timeText: {fileID: 0}
-  first: {fileID: 0}
-  second: {fileID: 0}
-  third: {fileID: 0}
-  fourth: {fileID: 0}
-  fifth: {fileID: 0}
-  LapText: {fileID: 0}
-  FinishText: {fileID: 0}
+  LapText: {fileID: 1796972614}
+  isLapFinished: 0
 --- !u!1 &782877512
 GameObject:
   m_ObjectHideFlags: 0
@@ -51147,7 +51200,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6401553234864159098, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9652554}
+      addedObject: {fileID: 9652560}
+    - targetCorrespondingSourceObject: {fileID: 6401553234864159098, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9652561}
     - targetCorrespondingSourceObject: {fileID: 556085550390256032, guid: 760e77b9d597bfc49804e6abf4ffc86d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 327669505}
@@ -51263,7 +51319,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4167294844265884436, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 778568312}
+      addedObject: {fileID: 778568318}
+    - targetCorrespondingSourceObject: {fileID: 4167294844265884436, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 778568319}
     - targetCorrespondingSourceObject: {fileID: 777972767191724295, guid: 16eea9d7e751e3541b77de0fbf75842b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2057546027}
@@ -51379,7 +51438,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3717258776072716538, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 110566701}
+      addedObject: {fileID: 110566707}
+    - targetCorrespondingSourceObject: {fileID: 3717258776072716538, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 110566708}
     - targetCorrespondingSourceObject: {fileID: 8963401830579850671, guid: 3556980833bce7f46b0410eed28e24f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1622978153}
@@ -51495,7 +51557,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5236132717692067600, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 707081994}
+      addedObject: {fileID: 707082000}
+    - targetCorrespondingSourceObject: {fileID: 5236132717692067600, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 707082001}
     - targetCorrespondingSourceObject: {fileID: 8818365546390221126, guid: 38d9e6de4c554dd459ce9b80ae96d44d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2036064183}
@@ -51639,7 +51704,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2512669279713735120, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9931181}
+      addedObject: {fileID: 9931187}
+    - targetCorrespondingSourceObject: {fileID: 2512669279713735120, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9931188}
     - targetCorrespondingSourceObject: {fileID: 5343389135396133338, guid: afcce3b39fa9de141a65c79293b83281, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2041151465}
@@ -51761,7 +51829,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6655765370693626491, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 385664990}
+      addedObject: {fileID: 385664996}
+    - targetCorrespondingSourceObject: {fileID: 6655765370693626491, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 385664997}
     - targetCorrespondingSourceObject: {fileID: 5417575489608450145, guid: 11f6cffbf57721e4bbb9fb234e23719d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 618824842}

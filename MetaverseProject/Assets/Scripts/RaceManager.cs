@@ -14,10 +14,6 @@ using UnityEditor;
 
 public class RaceManager : MonoBehaviour
 {
-    public string checkpointTag = "Checkpoint";
-    private int currentLapCount = 0;
-    private int totalLapCount = 3;
-    private int lastCheckpointIndex = -1;
     private bool isRaceFinished = false;
 
     public GameObject finishGamePanel;
@@ -37,8 +33,8 @@ public class RaceManager : MonoBehaviour
     public TMP_Text fourth;
     public TMP_Text fifth;
 
-    public Text LapText;
-    public Text FinishText;
+    private LapCounter lapCounter;
+    private string selectedCarTag;
 
     void Start()
     {
@@ -50,11 +46,19 @@ public class RaceManager : MonoBehaviour
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        UpdateLapText();
+        selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
+        lapCounter = GameObject.Find(selectedCarTag).GetComponent<LapCounter>();
+
     }
 
     void Update()
     {
+        // 주행 끝났는지 확인
+        if (lapCounter.isLapFinished && !isRaceFinished)
+        {
+            FinishRace();
+        }
+
         // 시간 측정
         if (raceStarted && !isRaceFinished)
         {
@@ -80,42 +84,10 @@ public class RaceManager : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// 피니시 라인에 도달했을 때 호출되는 이벤트 함수
-    /// </summary>
-    /// <param name="other">충돌한 콜라이더 객체</param>
-    private void OnTriggerEnter(Collider other)
-    {
-        //피니시 라인 태그와 일치하는 경우
-        if (other.CompareTag("LapCounter")) {
-            currentLapCount++;
-            UpdateLapText();
-
-            if(currentLap>=totalLaps){
-                FinishRace();
-            }
-        }
-    }
-
-    private int currentLap=0;
-    private int totalLaps=3;
-
-    void UpdateLapText()
-    {
-        if (LapText != null)
-        {
-            LapText.text = "Lap: " + currentLap + "/" + totalLaps;
-        }
-    }
-
-
     private void FinishRace()
     {
         //레이스 종료 상태 설정
         isRaceFinished = true;
-        //레이스 종료 메시지 출력
-        FinishText.text = "Race Finished!";
-
 
         // 레이스 결과 저장
         // 저장할 데이터 : 사용자 이메일, 레이싱 맵 번호, 시간 기록
