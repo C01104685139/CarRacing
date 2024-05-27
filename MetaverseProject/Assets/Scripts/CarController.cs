@@ -43,9 +43,9 @@ public class CarController : MonoBehaviour
         firstPos=transform.position;
         stopMovingAtStart = false;
 
-        moveSpeed = 10f;
+        moveSpeed = 18f;
         rotationSpeed = 30f;
-        maxSpeed = 15f;
+        maxSpeed = 25f;
         accelerationFactor = 2f;
 
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
@@ -104,7 +104,7 @@ public class CarController : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow))
                 downKeyTime += Time.deltaTime;
             else
-            downKeyTime = 0;
+                downKeyTime = 0;
 
             if (Input.GetKey(KeyCode.LeftArrow))
                 leftKeyTime += Time.deltaTime;
@@ -119,7 +119,7 @@ public class CarController : MonoBehaviour
             float currentMoveSpeed = moveSpeed + Mathf.Min(upKeyTime, downKeyTime) * accelerationFactor;
             currentMoveSpeed = Mathf.Clamp(currentMoveSpeed, moveSpeed, maxSpeed);
 
-            //rb.velocity = transform.forward * moveSpeed * 5;
+            //rb.velocity = transform.forward * moveSpeed;
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
 
             //이동 입력 처리

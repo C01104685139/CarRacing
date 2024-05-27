@@ -43,9 +43,14 @@ public class LapCounter : MonoBehaviour
 
     private void UpdateLapText()
     {
+        if (currentLapCount >= 4)
+        {
+            return;
+        }
+
         if (LapText != null)
         {
-            LapText.text = "Lap: " + currentLapCount + "/" + totalLapCount;
+            LapText.text = "Lap " + currentLapCount + "/" + totalLapCount;
         }
     }
 }
