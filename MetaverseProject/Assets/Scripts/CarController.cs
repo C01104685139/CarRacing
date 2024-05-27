@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float moveSpeed; //ÀÚµ¿Â÷ÀÇ ÀÌµ¿ ¼Óµµ
-    public float rotationSpeed; //ÀÚµ¿Â÷ÀÇ È¸Àü ¼Óµµ
-    public float maxSpeed; //ÀÚµ¿Â÷ÀÇ ÃÖ´ë ¼Óµµ
-    public float accelerationFactor; //°¡¼Ó °è¼ö
-    private string selectedCarTag; //´ë±â½Ç¿¡¼­ ¼±ÅÃµÈ ÀÚµ¿Â÷ÀÇ ÅÂ±×
-    private string selectedModeTag; //´ë±â½Ç¿¡¼­ ¼±ÅÃµÈ ¸ğµå ÅÂ±×
+    public float moveSpeed; //ìë™ì°¨ì˜ ì´ë™ ì†ë„
+    public float rotationSpeed; //ìë™ì°¨ì˜ íšŒì „ ì†ë„
+    public float maxSpeed; //ìë™ì°¨ì˜ ìµœëŒ€ ì†ë„
+    private float accelerationFactor; //ê°€ì† ê³„ìˆ˜
+    private float reductionFactor; //ê°ì† ê³„ìˆ˜
+    private string selectedCarTag; //ëŒ€ê¸°ì‹¤ì—ì„œ ì„ íƒëœ ìë™ì°¨ì˜ íƒœê·¸
+    private string selectedModeTag; //ëŒ€ê¸°ì‹¤ì—ì„œ ì„ íƒëœ ëª¨ë“œ íƒœê·¸
 
     private Rigidbody rb;
 
@@ -23,13 +24,13 @@ public class CarController : MonoBehaviour
     public WheelCollider rearLeftWheel;
     public WheelCollider rearRightWheel;
 
-    public float suspensionHeight; //¿øÇÏ´Â ¼­½ºÆæ¼Ç ³ôÀÌ
+    public float suspensionHeight; //ì›í•˜ëŠ” ì„œìŠ¤íœì…˜ ë†’ì´
 
     private float currentYAngle;
     private float yAngleVelocity;
-    private float rotationSmoothTime = 0.1f; // È¸Àü º¸°£ ½Ã°£
+    private float rotationSmoothTime = 0.1f; // íšŒì „ ë³´ê°„ ì‹œê°„
 
-    private bool stopMovingAtStart; // °ÔÀÓ ¸Ê ½ÃÀÛ ½Ã ÀÚµ¿Â÷ ¿òÁ÷ÀÓ Á¦ÇÑ
+    private bool stopMovingAtStart; // ê²Œì„ ë§µ ì‹œì‘ ì‹œ ìë™ì°¨ ì›€ì§ì„ ì œí•œ
     
     public float upDrag = 1.5f;
     float dragSaved;
@@ -47,6 +48,7 @@ public class CarController : MonoBehaviour
         rotationSpeed = 30f;
         maxSpeed = 25f;
         accelerationFactor = 2f;
+        reductionFactor = 0.5f;
 
         selectedCarTag = PlayerPrefs.GetString("selectedCarTag");
         selectedModeTag = PlayerPrefs.GetString("selectedModeTag");
@@ -54,28 +56,28 @@ public class CarController : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         //playerTrail = GetComponent<PlayerTrail>();
-        rb.interpolation = RigidbodyInterpolation.Interpolate; //º¸°£ ¼³Á¤ »ç¿ë
-        rb.mass = 2000f; //ÀÚµ¿Â÷ÀÇ Áú·® Á¶Á¤
-        rb.drag = 0.5f; //°ø±â ÀúÇ× ¼³Á¤
-        rb.angularDrag = 0.5f; //°¢¼Óµµ¿¡ ´ëÇÑ °ø±â ÀúÇ× ¼³Á¤
+        rb.interpolation = RigidbodyInterpolation.Interpolate; //ë³´ê°„ ì„¤ì • ì‚¬ìš©
+        rb.mass = 2000f; //ìë™ì°¨ì˜ ì§ˆëŸ‰ ì¡°ì •
+        rb.drag = 0.5f; //ê³µê¸° ì €í•­ ì„¤ì •
+        rb.angularDrag = 0.5f; //ê°ì†ë„ì— ëŒ€í•œ ê³µê¸° ì €í•­ ì„¤ì •
 
         frontLeftWheel.suspensionDistance = suspensionHeight;
         frontRightWheel.suspensionDistance = suspensionHeight;
         rearLeftWheel.suspensionDistance = suspensionHeight;
-        rearRightWheel.suspensionDistance = suspensionHeight; //¼­½ºÆæ¼Ç ³ôÀÌ ¼³Á¤
+        rearRightWheel.suspensionDistance = suspensionHeight; //ì„œìŠ¤íœì…˜ ë†’ì´ ì„¤ì •
 
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
 
         dragSaved = rb.drag;
 
-        //ÀÚµ¿Â÷¿¡ ´ëÇÑ ¼±ÅÃ ¿©ºÎ È®ÀÎ
+        //ìë™ì°¨ì— ëŒ€í•œ ì„ íƒ ì—¬ë¶€ í™•ì¸
         if (!gameObject.CompareTag(selectedCarTag))
         {
-            //¼±ÅÃµÇÁö ¾ÊÀ½->ºñÈ°¼ºÈ­
+            //ì„ íƒë˜ì§€ ì•ŠìŒ->ë¹„í™œì„±í™”
             gameObject.SetActive(false);
         }
 
-        // ¸ğµå ¹İ¿µ
+        // ëª¨ë“œ ë°˜ì˜
         if (selectedModeTag != "ShadowCar")
         {
             GameObject cart = GameObject.FindWithTag("ShadowCar");
@@ -86,16 +88,16 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        // °ÔÀÓ ¸Ê Ã³À½ ½ÃÀÛ ½Ã ÀÚµ¿Â÷ ¿òÁ÷ÀÓ Á¦ÇÑ
+        // ê²Œì„ ë§µ ì²˜ìŒ ì‹œì‘ ì‹œ ìë™ì°¨ ì›€ì§ì„ ì œí•œ
         if (!stopMovingAtStart)
         {
             return;
         }
 
-        //¼±ÅÃµÈ ÀÚµ¿Â÷¿¡ ´ëÇØ¼­¸¸ ÀÔ·Â Ã³¸®
+        //ì„ íƒëœ ìë™ì°¨ì— ëŒ€í•´ì„œë§Œ ì…ë ¥ ì²˜ë¦¬
         if (gameObject.activeSelf)
         {
-            // ¹æÇâÅ°°¡ ´­¸° ½Ã°£ ÃßÀû
+            // ë°©í–¥í‚¤ê°€ ëˆŒë¦° ì‹œê°„ ì¶”ì 
             if (Input.GetKey(KeyCode.UpArrow))
                 upKeyTime += Time.deltaTime;
             else
@@ -122,19 +124,19 @@ public class CarController : MonoBehaviour
             //rb.velocity = transform.forward * moveSpeed;
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
 
-            //ÀÌµ¿ ÀÔ·Â Ã³¸®
+            //ì´ë™ ì…ë ¥ ì²˜ë¦¬
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
-            //»ó ¹æÇâÅ°
+            //ìƒ ë°©í–¥í‚¤
             if (Input.GetKey(KeyCode.UpArrow)) {
                 
-                //»ó ¹æÇâÅ° ´©¸¦ ¶§ °¡¼Óµµ Àû¿ë
+                //ìƒ ë°©í–¥í‚¤ ëˆ„ë¥¼ ë•Œ ê°€ì†ë„ ì ìš©
                 Vector3 moveDirection = transform.forward * currentMoveSpeed;
                 rb.AddForce(moveDirection, ForceMode.Acceleration);
 
                 if (Input.GetKey(KeyCode.LeftArrow)) {
-                    //»óÁÂ ÀÌµ¿
+                    //ìƒì¢Œ ì´ë™
                     Vector3 upleft_moveDirection = (transform.forward + -transform.right).normalized * moveSpeed;
                     float rotation = -rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
@@ -142,7 +144,7 @@ public class CarController : MonoBehaviour
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
                 else if (Input.GetKey(KeyCode.RightArrow)) {
-                    //»ó¿ì ÀÌµ¿
+                    //ìƒìš° ì´ë™
                     Vector3 upright_moveDirection = (transform.forward + transform.right).normalized * moveSpeed;
                     float rotation = rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
@@ -154,15 +156,15 @@ public class CarController : MonoBehaviour
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
             }
-            //ÇÏ ¹æÇâÅ°
+            //í•˜ ë°©í–¥í‚¤
             else if (Input.GetKey(KeyCode.DownArrow)) {
 
-                //ÇÏ ¹æÇâÅ° ´©¸¦ ¶§ °¡¼Óµµ Àû¿ë
+                //í•˜ ë°©í–¥í‚¤ ëˆ„ë¥¼ ë•Œ ê°€ì†ë„ ì ìš©
                 Vector3 moveDirection = -transform.forward * currentMoveSpeed;
                 rb.AddForce(moveDirection, ForceMode.Acceleration);
 
                 if (Input.GetKey(KeyCode.LeftArrow)) {
-                    //ÇÏÁÂ ÀÌµ¿
+                    //í•˜ì¢Œ ì´ë™
                     Vector3 downleft_moveDirection = (-transform.forward + -transform.right).normalized * moveSpeed;
                     float rotation = -rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
@@ -170,7 +172,7 @@ public class CarController : MonoBehaviour
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
                 else if (Input.GetKey(KeyCode.RightArrow)) {
-                    //ÇÏ¿ì ÀÌµ¿
+                    //í•˜ìš° ì´ë™
                     Vector3 downright_moveDirection = (-transform.forward + transform.right).normalized * moveSpeed;
                     float rotation = rotationSpeed * Time.fixedDeltaTime;
                     Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
@@ -182,9 +184,9 @@ public class CarController : MonoBehaviour
                     rb.AddForce(moveDirection, ForceMode.Acceleration);
                 }
             }
-            //ÁÂ ¹æÇâÅ°
+            //ì¢Œ ë°©í–¥í‚¤
             else if (Input.GetKey(KeyCode.LeftArrow)) {
-                //ÁÂ ¹æÇâÅ°¸¦ ´©¸£°í ÀÖÀ¸¸é °¡¼Óµµ Àû¿ë
+                //ì¢Œ ë°©í–¥í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆìœ¼ë©´ ê°€ì†ë„ ì ìš©
                 Vector3 moveDirection = -transform.right * currentMoveSpeed;
                 rb.AddForce(moveDirection, ForceMode.Acceleration);
 
@@ -192,9 +194,9 @@ public class CarController : MonoBehaviour
                 Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            //¿ì ¹æÇâÅ°
+            //ìš° ë°©í–¥í‚¤
             else if (Input.GetKey(KeyCode.RightArrow)) {
-                //¿ì ¹æÇâÅ°¸¦ ´©¸£°í ÀÖÀ¸¸é °¡¼Óµµ Àû¿ë
+                //ìš° ë°©í–¥í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆìœ¼ë©´ ê°€ì†ë„ ì ìš©
                 Vector3 moveDirection = -transform.forward * currentMoveSpeed;
                 rb.AddForce(moveDirection, ForceMode.Acceleration);
 
@@ -223,13 +225,13 @@ public class CarController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 isShift = false;
-                rb.drag = dragSaved; // ´Ù½Ã ¿ø·¡ drag·Î
+                rb.drag = dragSaved; // ë‹¤ì‹œ ì›ë˜ dragë¡œ
                 //playerTrail.DriftRemove();
             }
         }
     }
 
-    // °ÔÀÓ ¸Ê Ã³À½ ½ÃÀÛ ½Ã ÀÚµ¿Â÷ ¿òÁ÷ÀÓ Á¦ÇÑ (Ä«¿îÆ®´Ù¿î ÀÌÈÄ¿¡ µ¿ÀÛ)
+    // ê²Œì„ ë§µ ì²˜ìŒ ì‹œì‘ ì‹œ ìë™ì°¨ ì›€ì§ì„ ì œí•œ (ì¹´ìš´íŠ¸ë‹¤ìš´ ì´í›„ì— ë™ì‘)
     public void StartMoving(bool status)
     {
         stopMovingAtStart = status;
@@ -237,6 +239,17 @@ public class CarController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if (other.tag == "Ground") transform.position = firstPos; 
+    }
+
+    // ë²½ ì¶©ëŒ
+    void OnCollisionEnter(Collision collision)
+    {
+        // í˜„ì¬ ì†ë„
+        Vector3 currentVelocity = rb.velocity;
+
+        // ì†ë„ ê°ì†Œ
+        Vector3 reducedVelocity = currentVelocity * reductionFactor;
+        rb.velocity = reducedVelocity;
     }
 }
 

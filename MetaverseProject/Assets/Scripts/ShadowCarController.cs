@@ -21,12 +21,15 @@ public class ShadowCarController : MonoBehaviour
     private float shadowCarspeed;
     private List<RaceRecords> recordList; // 불러온 주행 기록 저장할 리스트
 
+    public bool stopMoving;
+
     // Start is called before the first frame update
     void Start()
     {
         lapCount = 4; // 시작할 때 + 3바퀴
         currentLap = 0;
         isfinished = false;
+        stopMoving = true;
         recordList = new List<RaceRecords>();
 
         cart = GameObject.FindWithTag("ShadowCar").GetComponent<CinemachineDollyCart>();
@@ -35,27 +38,20 @@ public class ShadowCarController : MonoBehaviour
 
         // 해당 맵의 1등 기록 가져오기
         loadRecord();
-
-        StartCoroutine(StopMovingAtFirst()); // 카운트다운 3초 동안 멈춰있기
-    }
-
-    IEnumerator StopMovingAtFirst()
-    { 
-        float time = 0f;
-        while (time < 3f)
-        {
-            cart.m_Speed = 0f;
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        shadowCarspeed = totalDistance / firstRecord;
-        cart.m_Speed = shadowCarspeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (stopMoving || isfinished)
+        {
+            cart.m_Speed = 0f;
+        }
+        else 
+        {
+            shadowCarspeed = totalDistance / firstRecord;
+            cart.m_Speed = shadowCarspeed;
+        }
 
     }
 
@@ -68,7 +64,6 @@ public class ShadowCarController : MonoBehaviour
             if (currentLap == lapCount)
             {
                 isfinished = true;
-                cart.m_Speed = 0f;
             }
         }
     }
