@@ -45,6 +45,7 @@ public class LapCounter : MonoBehaviour
     {
         if (currentLapCount >= 4)
         {
+            isLapFinished = false;
             return;
         }
 
